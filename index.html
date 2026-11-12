@@ -64,7 +64,7 @@ header h1{font:400 28px/1 var(--head);letter-spacing:.03em;margin:0}
 .pl{font-size:12px;font-weight:bold;border-radius:6px;padding:3px 9px;color:#fff}
 .pl-ig{background:#C13584}.pl-fb{background:#1877F2}.pl-li{background:#0A66C2}
 .badge{display:inline-block;font-size:12px;font-weight:bold;border-radius:999px;padding:3px 10px}
-.b-wait{background:#efecf5;color:#4a4560}.b-ok{background:#dcefb5;color:#2d4400}.b-change{background:#fbd3e8;color:#7a0a47}
+.b-wait{background:#efecf5;color:#4a4560}.b-recheck{background:#fff6a8;color:#3d3700}.b-ok{background:#dcefb5;color:#2d4400}.b-change{background:#fbd3e8;color:#7a0a47}
 .pick{display:inline-flex;align-items:center;gap:6px;font-size:13px;margin-left:auto}
 .pick input{width:18px;height:18px;accent-color:var(--purple)}
 .ptabs{display:flex;gap:4px;margin-top:14px;border-bottom:1px solid var(--line)}
@@ -143,6 +143,7 @@ dialog iframe{display:block;width:100%;height:340px;border:0}
       <button data-f="all" aria-pressed="true">All posts</button>
       <button data-f="wait" aria-pressed="false">Waiting for sign-off</button>
       <button data-f="change" aria-pressed="false">Changes needed</button>
+      <button data-f="recheck" aria-pressed="false">Changes made: check again</button>
       <button data-f="ok" aria-pressed="false">Approved</button>
       <span class="counts" id="counts"></span>
     </div>
@@ -217,7 +218,7 @@ function state(camp, id) {
   if (last.decision === "Approved") return { k: "ok", label: `Approved by ${last.name}` };
   // Once every "changes needed" since the last approval has been dealt with, it's back with the reviewer.
   const open = t.filter(c => c.decision === "Changes needed" && !c.outcome);
-  if (!open.length) return { k: "wait", label: "Changes made: please check again" };
+  if (!open.length) return { k: "recheck", label: "Changes made: please check again" };
   return { k: "change", label: `Changes needed (${last.name})` };
 }
 
@@ -281,7 +282,8 @@ function render() {
   $("#campaignTabs").innerHTML = CAMPAIGNS.length > 1 ? CAMPAIGNS.map(c => `<button type="button" data-camp="${c.slug}" aria-pressed="${c === camp}">${esc(c.name)}</button>`).join("") : "";
   const posts = camp.posts.filter(p => (filter === "all" || state(camp, p.id).k === filter) && (plat === "all" || p.platforms.includes(plat)));
   const all = camp.posts.map(p => state(camp, p.id).k);
-  $("#counts").textContent = `${all.filter(k => k === "ok").length} approved · ${all.filter(k => k === "change").length} changes needed · ${all.filter(k => k === "wait").length} waiting`;
+  const n = k => all.filter(x => x === k).length;
+  $("#counts").textContent = `${n("ok")} approved · ${n("change")} changes needed · ${n("recheck")} to check again · ${n("wait")} waiting`;
   const weeks = {};
   posts.forEach(p => (weeks[weekStart(p.date)] ||= []).push(p));
   $("#weeks").innerHTML = Object.keys(weeks).sort().map(w => {
