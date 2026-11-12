@@ -87,6 +87,24 @@ header h1{font:400 28px/1 var(--head);letter-spacing:.03em;margin:0}
 #bulk a{background:var(--green);color:#1d1830;text-decoration:none;font-weight:bold;border-radius:999px;padding:8px 16px;white-space:nowrap}
 #bulk button{border:0;background:none;color:#fff;text-decoration:underline;font-size:13px}
 footer{color:var(--muted);font-size:12px;padding:30px 0 90px}
+/* who's reviewing */
+.me{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:flex-end;margin-top:14px;background:#fff;border-radius:12px;padding:12px 14px}
+.me label{display:flex;flex-direction:column;font-size:12px;font-weight:bold;color:var(--muted);gap:4px}
+.me input{font:inherit;font-weight:normal;color:var(--ink);padding:8px 10px;border:1px solid var(--line);border-radius:8px;min-width:200px}
+.me .hint{font-size:12px;color:var(--muted);padding-bottom:9px}
+.me.need{box-shadow:0 0 0 3px var(--pink)}
+/* sign-off form, inside the page */
+.actions button{border:0;border-radius:999px;padding:8px 16px;font-size:13px;font-weight:bold}
+.actions button[aria-expanded=true]{outline:3px solid var(--purple);outline-offset:2px}
+.inform{margin-top:12px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.inform .bar{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--bg);font-size:13px}
+.inform .bar button{border:0;background:none;color:var(--purple);font-weight:bold}
+.inform iframe{display:block;width:100%;height:720px;border:0}
+dialog{border:0;border-radius:16px;padding:0;width:min(640px,calc(100% - 24px));box-shadow:0 10px 40px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(29,24,48,.55)}
+dialog .bar{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--purple);color:#fff;font-weight:bold}
+dialog .bar button{border:0;background:none;color:#fff;font-size:20px}
+dialog iframe{display:block;width:100%;height:min(720px,80vh);border:0}
 </style>
 </head>
 <body>
@@ -111,6 +129,11 @@ footer{color:var(--muted);font-size:12px;padding:30px 0 90px}
   <section class="intro">
     <h2 id="campName"></h2>
     <p>Look through each post, then approve it or say what needs changing. Tick several posts to approve them in one go. Comments appear under each post within about 10 minutes.</p>
+    <div class="me" id="me">
+      <label>Your name <input id="meName" autocomplete="name" placeholder="e.g. Anda Smith"></label>
+      <label>Your team <input id="meTeam" placeholder="e.g. Supported Lodgings"></label>
+      <span class="hint">We'll fill these in for you on every sign-off.</span>
+    </div>
     <div class="filters" id="filters">
       <button data-f="all" aria-pressed="true">All posts</button>
       <button data-f="wait" aria-pressed="false">Waiting for sign-off</button>
@@ -123,9 +146,10 @@ footer{color:var(--muted);font-size:12px;padding:30px 0 90px}
   <footer>Step by Step · Young People. Hard Times. Bright Futures. Drafts for internal review: please don't share.</footer>
 </main>
 
+<dialog id="bulkForm"><div class="bar"><span id="bulkTitle">Approve selected posts</span><button type="button" id="bulkClose" aria-label="Close">×</button></div><iframe title="Sign-off form"></iframe></dialog>
 <div id="bulk" role="region" aria-label="Selected posts">
   <span id="bulkText"></span>
-  <a id="bulkGo" target="_blank" rel="noopener">Approve selected</a>
+  <a id="bulkGo" href="#" role="button">Approve selected</a>
   <button id="bulkClear" type="button">Clear</button>
 </div>
 
@@ -152,10 +176,18 @@ else $("#gateForm").addEventListener("submit", async e => {
 
 /* ---------- data ---------- */
 let CAMPAIGNS = [], COMMENTS = {}, current = null, filter = "all";
+// The reviewer's name and team, remembered on this device so every form arrives filled in.
+const local = { get: k => { try { return localStorage.getItem(k) || ""; } catch { return ""; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
+const me = { name: local.get("reviewerName"), team: local.get("reviewerTeam") };
+$("#meName").value = me.name; $("#meTeam").value = me.team;
+$("#meName").addEventListener("input", e => { me.name = e.target.value.trim(); local.set("reviewerName", me.name); $("#me").classList.remove("need"); });
+$("#meTeam").addEventListener("input", e => { me.team = e.target.value.trim(); local.set("reviewerTeam", me.team); });
+const nudge = () => { if (me.name) return; $("#me").classList.add("need"); };
 const selected = new Set();
 const formLink = (camp, ids, decision) => {
   // %20 rather than "+" for spaces: the form reads %20 reliably.
-  const q = { Campaign: camp.name, Posts: ids.join(", "), ...(decision ? { Decision: decision } : {}) };
+  const q = { Campaign: camp.name, Posts: ids.join(", "), ...(decision ? { Decision: decision } : {}),
+    ...(me.name ? { "Your name": me.name } : {}), ...(me.team ? { "Your team": me.team } : {}) };
   return R.formUrl + "?" + Object.entries(q).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join("&");
 };
 const thread = (camp, id) => ((COMMENTS[camp.name] || {})[id] || []).slice().sort((a, b) => a.date - b.date);
@@ -202,10 +234,11 @@ function postHTML(camp, p) {
       ${p.sticker ? `<p class="note"><b>Added in the app:</b> ${marks(p.sticker)}</p>` : ""}
       ${p.videoNote ? `<p class="note">${esc(p.videoNote)}</p>` : ""}
       <div class="actions">
-        <a class="a-ok" target="_blank" rel="noopener" href="${formLink(camp, [p.id], "Approved")}">Approve</a>
-        <a class="a-change" target="_blank" rel="noopener" href="${formLink(camp, [p.id], "Changes needed")}">Changes needed</a>
-        <a class="a-comment" target="_blank" rel="noopener" href="${formLink(camp, [p.id], "Comment only")}">Comment</a>
+        <button type="button" class="a-ok" data-open="Approved" aria-expanded="false">Approve</button>
+        <button type="button" class="a-change" data-open="Changes needed" aria-expanded="false">Changes needed</button>
+        <button type="button" class="a-comment" data-open="Comment only" aria-expanded="false">Comment</button>
       </div>
+      <div class="inform" hidden><div class="bar"><span></span><button type="button" data-closeform>Close</button></div><iframe title="Sign-off form for ${p.id}"></iframe></div>
       <div class="thread"><h5>Comments and sign-offs</h5>
         ${th.length ? th.map(c => `<div class="c"><span class="who">${esc(c.name)}</span>${c.team ? `, ${esc(c.team)}` : ""} · <span class="badge ${c.decision === "Approved" ? "b-ok" : c.decision === "Changes needed" ? "b-change" : "b-wait"}">${esc(c.decision || "Comment")}</span>
           <span class="tm">${new Date(c.date).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}${c.bulk ? " · approved with others" : ""}</span>
@@ -237,8 +270,28 @@ function bulkBar() {
   if (!n) return;
   const ids = current.posts.map(p => p.id).filter(id => selected.has(id));
   $("#bulkText").textContent = `${n} post${n > 1 ? "s" : ""} selected`;
-  $("#bulkGo").href = formLink(current, ids, "Approved");
+  $("#bulkGo").dataset.ids = ids.join(",");
 }
+// Open the sign-off form inside the page: under the post, or in a pop-up for several posts.
+function openForm(post, decision) {
+  nudge();
+  const box = post.querySelector(".inform"), btn = post.querySelector(`[data-open="${decision}"]`);
+  const already = !box.hidden && box.dataset.decision === decision;
+  post.querySelectorAll("[data-open]").forEach(b => b.setAttribute("aria-expanded", "false"));
+  if (already) { box.hidden = true; box.querySelector("iframe").src = "about:blank"; return; }
+  box.dataset.decision = decision;
+  box.querySelector(".bar span").textContent = { "Approved": "Approve this post", "Changes needed": "What needs changing?", "Comment only": "Add a comment" }[decision] + (me.name ? "" : " (add your name at the top to save typing)");
+  box.querySelector("iframe").src = formLink(current, [post.dataset.id], decision);
+  box.hidden = false; btn.setAttribute("aria-expanded", "true");
+}
+function openBulk() {
+  nudge();
+  const ids = $("#bulkGo").dataset.ids.split(",");
+  $("#bulkTitle").textContent = `Approve ${ids.length} post${ids.length > 1 ? "s" : ""}: ${ids.join(", ")}`;
+  $("#bulkForm iframe").src = formLink(current, ids, "Approved");
+  $("#bulkForm").showModal();
+}
+$("#bulkClose").addEventListener("click", () => { $("#bulkForm").close(); $("#bulkForm iframe").src = "about:blank"; selected.clear(); render(); });
 
 /* ---------- interactions ---------- */
 document.addEventListener("click", e => {
@@ -248,8 +301,12 @@ document.addEventListener("click", e => {
   const f = t.closest("[data-f]");
   if (f) { filter = f.dataset.f; document.querySelectorAll("[data-f]").forEach(b => b.setAttribute("aria-pressed", b === f)); render(); return; }
   const wk = t.closest("[data-weekall]");
-  if (wk) { wk.dataset.weekall.split(",").forEach(id => selected.add(id)); render(); $("#bulkGo").focus(); return; }
+  if (wk) { wk.dataset.weekall.split(",").forEach(id => selected.add(id)); render(); openBulk(); return; }
   if (t.id === "bulkClear") { selected.clear(); render(); return; }
+  if (t.id === "bulkGo") { e.preventDefault(); openBulk(); return; }
+  const op = t.closest("[data-open]");
+  if (op) { openForm(op.closest(".post"), op.dataset.open); return; }
+  if (t.closest("[data-closeform]")) { const box = t.closest(".inform"); box.hidden = true; box.querySelector("iframe").src = "about:blank"; box.closest(".post").querySelectorAll("[data-open]").forEach(b => b.setAttribute("aria-expanded", "false")); return; }
   if (t.classList.contains("more")) { const c = t.closest(".cap"); c.innerHTML = marks(decodeURIComponent(c.dataset.full)); return; }
   const cap = t.closest("[data-cap]");
   if (cap) {
