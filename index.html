@@ -181,10 +181,13 @@ const store = { get: k => { try { return sessionStorage.getItem(k); } catch { re
 
 /* ---------- light password gate ---------- */
 async function sha(t) { const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t)); return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, "0")).join(""); }
-if (store.get("ok") === R.passwordHash) $("#gate").remove();
+// A campaign's own page (/<slug>/) uses that campaign's password; the overview page uses the main one.
+const ONLY = window.ONLY_CAMPAIGN || null;
+const HASH = (ONLY && R.passwords && R.passwords[ONLY]) || R.passwordHash;
+if (store.get("ok") === HASH) $("#gate").remove();
 else $("#gateForm").addEventListener("submit", async e => {
   e.preventDefault();
-  if (await sha($("#pw").value.trim().toLowerCase()) === R.passwordHash) { store.set("ok", R.passwordHash); $("#gate").remove(); }
+  if (await sha($("#pw").value.trim().toLowerCase()) === HASH) { store.set("ok", HASH); $("#gate").remove(); }
   else $("#err").textContent = "That's not the password.";
 });
 
@@ -366,6 +369,7 @@ document.addEventListener("change", e => {
 /* ---------- load ---------- */
 (async () => {
   CAMPAIGNS = await fetch("data/campaigns.json", { cache: "no-store" }).then(r => r.json());
+  if (ONLY) CAMPAIGNS = CAMPAIGNS.filter(c => c.slug === ONLY);
   COMMENTS = await fetch("data/comments.json?t=" + Date.now(), { cache: "no-store" }).then(r => r.json()).catch(() => ({}));
   const want = new URLSearchParams(location.search).get("campaign");
   current = CAMPAIGNS.find(c => c.slug === want) || CAMPAIGNS[CAMPAIGNS.length - 1];
