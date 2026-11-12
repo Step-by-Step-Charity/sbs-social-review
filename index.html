@@ -144,6 +144,12 @@ dialog iframe{display:block;width:100%;height:340px;border:0}
       <button data-f="ok" aria-pressed="false">Approved</button>
       <span class="counts" id="counts"></span>
     </div>
+    <div class="filters" id="platforms" aria-label="Platform">
+      <button data-plat="all" aria-pressed="true">All platforms</button>
+      <button data-plat="ig" aria-pressed="false">Instagram</button>
+      <button data-plat="fb" aria-pressed="false">Facebook</button>
+      <button data-plat="li" aria-pressed="false">LinkedIn</button>
+    </div>
   </section>
   <div id="weeks"></div>
   <footer>Step by Step · Young People. Hard Times. Bright Futures. Drafts for internal review: please don't share.</footer>
@@ -180,7 +186,7 @@ else $("#gateForm").addEventListener("submit", async e => {
 });
 
 /* ---------- data ---------- */
-let CAMPAIGNS = [], COMMENTS = {}, current = null, filter = "all";
+let CAMPAIGNS = [], COMMENTS = {}, current = null, filter = "all", plat = "all";
 // The reviewer's name and team, remembered on this device so every form arrives filled in.
 const local = { get: k => { try { return localStorage.getItem(k) || ""; } catch { return ""; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
 const me = { name: local.get("reviewerName"), team: local.get("reviewerTeam") };
@@ -231,6 +237,8 @@ function caption(text, limit = 220) {
 }
 function postHTML(camp, p) {
   const st = state(camp, p.id), plats = Object.keys(p.captions).filter(k => p.captions[k]);
+  // When filtering by a platform, open that platform's caption first.
+  if (plat !== "all" && plats.includes(plat)) plats.sort((a, b) => (b === plat) - (a === plat));
   const th = thread(camp, p.id);
   return `<article class="post ${selected.has(p.id) ? "sel" : ""}" id="post-${p.id}" data-id="${p.id}" data-state="${st.k}">
     ${viewer(camp, p)}
@@ -262,7 +270,7 @@ function render() {
   const camp = current;
   $("#campName").textContent = camp.name;
   $("#campaignTabs").innerHTML = CAMPAIGNS.length > 1 ? CAMPAIGNS.map(c => `<button type="button" data-camp="${c.slug}" aria-pressed="${c === camp}">${esc(c.name)}</button>`).join("") : "";
-  const posts = camp.posts.filter(p => filter === "all" || state(camp, p.id).k === filter);
+  const posts = camp.posts.filter(p => (filter === "all" || state(camp, p.id).k === filter) && (plat === "all" || p.platforms.includes(plat)));
   const all = camp.posts.map(p => state(camp, p.id).k);
   $("#counts").textContent = `${all.filter(k => k === "ok").length} approved · ${all.filter(k => k === "change").length} changes needed · ${all.filter(k => k === "wait").length} waiting`;
   const weeks = {};
@@ -311,6 +319,8 @@ document.addEventListener("click", e => {
   const camp = t.closest("[data-camp]");
   if (camp) { current = CAMPAIGNS.find(c => c.slug === camp.dataset.camp); selected.clear(); render(); return; }
   const f = t.closest("[data-f]");
+  const pf = t.closest("[data-plat]");
+  if (pf) { plat = pf.dataset.plat; document.querySelectorAll("[data-plat]").forEach(b => b.setAttribute("aria-pressed", b === pf)); render(); return; }
   if (f) { filter = f.dataset.f; document.querySelectorAll("[data-f]").forEach(b => b.setAttribute("aria-pressed", b === f)); render(); return; }
   const wk = t.closest("[data-weekall]");
   if (wk) { wk.dataset.weekall.split(",").forEach(id => selected.add(id)); render(); openBulk(); return; }
