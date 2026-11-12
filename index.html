@@ -60,6 +60,9 @@ header h1{font:400 28px/1 var(--head);letter-spacing:.03em;margin:0}
 .meta .ref{font-weight:bold;color:var(--muted);font-size:13px}
 .meta h4{font:400 30px/1.05 var(--head);letter-spacing:.02em;color:var(--purple);margin:6px 0 4px}
 .meta .when{font-size:13px;color:var(--muted)}
+.where{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.pl{font-size:12px;font-weight:bold;border-radius:6px;padding:3px 9px;color:#fff}
+.pl-ig{background:#C13584}.pl-fb{background:#1877F2}.pl-li{background:#0A66C2}
 .badge{display:inline-block;font-size:12px;font-weight:bold;border-radius:999px;padding:3px 10px}
 .b-wait{background:#efecf5;color:#4a4560}.b-ok{background:#dcefb5;color:#2d4400}.b-change{background:#fbd3e8;color:#7a0a47}
 .pick{display:inline-flex;align-items:center;gap:6px;font-size:13px;margin-left:auto}
@@ -99,12 +102,12 @@ footer{color:var(--muted);font-size:12px;padding:30px 0 90px}
 .inform{margin-top:12px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
 .inform .bar{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--bg);font-size:13px}
 .inform .bar button{border:0;background:none;color:var(--purple);font-weight:bold}
-.inform iframe{display:block;width:100%;height:720px;border:0}
+.inform iframe{display:block;width:100%;height:330px;border:0}
 dialog{border:0;border-radius:16px;padding:0;width:min(640px,calc(100% - 24px));box-shadow:0 10px 40px rgba(0,0,0,.35)}
 dialog::backdrop{background:rgba(29,24,48,.55)}
 dialog .bar{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--purple);color:#fff;font-weight:bold}
 dialog .bar button{border:0;background:none;color:#fff;font-size:20px}
-dialog iframe{display:block;width:100%;height:min(720px,80vh);border:0}
+dialog iframe{display:block;width:100%;height:340px;border:0}
 </style>
 </head>
 <body>
@@ -161,6 +164,8 @@ const esc = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").re
 const marks = s => esc(s).replace(/\[\[(.+?)\]\]/g, "<mark>$1</mark>");
 const PL = { ig: "Instagram", fb: "Facebook", li: "LinkedIn" };
 const KIND = { feed: "Feed post", story: "Story", reel: "Reel" };
+// "Instagram story", "Facebook reel", "LinkedIn post"… so nobody has to guess where a post goes.
+const where = (pl, kind) => `${PL[pl]} ${pl === "li" ? (kind === "feed" ? "post" : "video") : kind === "feed" ? "feed" : kind}`;
 const D = s => new Date(s + "T12:00:00");
 const fmt = (s, o) => D(s).toLocaleDateString("en-GB", o || { weekday: "short", day: "numeric", month: "short" });
 const store = { get: k => { try { return sessionStorage.getItem(k); } catch { return null; } }, set: (k, v) => { try { sessionStorage.setItem(k, v); } catch {} } };
@@ -182,7 +187,13 @@ const me = { name: local.get("reviewerName"), team: local.get("reviewerTeam") };
 $("#meName").value = me.name; $("#meTeam").value = me.team;
 $("#meName").addEventListener("input", e => { me.name = e.target.value.trim(); local.set("reviewerName", me.name); $("#me").classList.remove("need"); });
 $("#meTeam").addEventListener("input", e => { me.team = e.target.value.trim(); local.set("reviewerTeam", me.team); });
-const nudge = () => { if (me.name) return; $("#me").classList.add("need"); };
+// The form only shows a comment box, so the name has to come from here: ask for it first.
+const nudge = () => {
+  if (me.name) return false;
+  $("#me").classList.add("need"); $("#me").scrollIntoView({ behavior: "smooth", block: "center" }); $("#meName").focus();
+  $("#me .hint").textContent = "Please add your name first, so we know who's signing off.";
+  return true;
+};
 const selected = new Set();
 const formLink = (camp, ids, decision) => {
   // %20 rather than "+" for spaces: the form reads %20 reliably.
@@ -227,7 +238,8 @@ function postHTML(camp, p) {
       <div class="top"><span class="ref">${p.id}</span><span class="badge b-${st.k}">${esc(st.label)}</span>
         <label class="pick"><input type="checkbox" data-pick="${p.id}" ${selected.has(p.id) ? "checked" : ""}> Select</label></div>
       <h4>${esc(p.title)}</h4>
-      <div class="when">${fmt(p.date, { weekday: "long", day: "numeric", month: "long" })} · ${KIND[p.kind]}${p.animated ? " (animated)" : ""} · ${p.platforms.map(x => PL[x]).join(", ")}</div>
+      <div class="when">${fmt(p.date, { weekday: "long", day: "numeric", month: "long" })}${p.animated ? " · animated" : ""}</div>
+      <div class="where">${p.platforms.map(x => `<span class="pl pl-${x}">${where(x, p.kind)}</span>`).join("")}</div>
       ${plats.length ? `<div class="ptabs" role="tablist">${plats.map((k, i) => `<button type="button" data-cap="${k}" aria-pressed="${i === 0}">${PL[k]}</button>`).join("")}</div>
         <div class="capbox" data-caps="${encodeURIComponent(JSON.stringify(p.captions))}">${caption(p.captions[plats[0]])}</div>`
         : `<p class="note">Story: the words are on the image.</p>`}
@@ -274,18 +286,18 @@ function bulkBar() {
 }
 // Open the sign-off form inside the page: under the post, or in a pop-up for several posts.
 function openForm(post, decision) {
-  nudge();
+  if (nudge()) return;
   const box = post.querySelector(".inform"), btn = post.querySelector(`[data-open="${decision}"]`);
   const already = !box.hidden && box.dataset.decision === decision;
   post.querySelectorAll("[data-open]").forEach(b => b.setAttribute("aria-expanded", "false"));
   if (already) { box.hidden = true; box.querySelector("iframe").src = "about:blank"; return; }
   box.dataset.decision = decision;
-  box.querySelector(".bar span").textContent = { "Approved": "Approve this post", "Changes needed": "What needs changing?", "Comment only": "Add a comment" }[decision] + (me.name ? "" : " (add your name at the top to save typing)");
+  box.querySelector(".bar span").textContent = { "Approved": `Approving as ${me.name}. Add a comment if you like, then Send.`, "Changes needed": `What needs changing? (${me.name})`, "Comment only": `Comment as ${me.name}` }[decision];
   box.querySelector("iframe").src = formLink(current, [post.dataset.id], decision);
   box.hidden = false; btn.setAttribute("aria-expanded", "true");
 }
 function openBulk() {
-  nudge();
+  if (nudge()) return;
   const ids = $("#bulkGo").dataset.ids.split(",");
   $("#bulkTitle").textContent = `Approve ${ids.length} post${ids.length > 1 ? "s" : ""}: ${ids.join(", ")}`;
   $("#bulkForm iframe").src = formLink(current, ids, "Approved");
