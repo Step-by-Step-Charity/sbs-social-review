@@ -162,10 +162,10 @@
      "fb": "Our Christmas film is here. Watch, and share it with someone who'd want to see it.\n\nFor most of us, Christmas means a table set for everyone and someone glad we're there. For young people facing homelessness, it can look very different.\n\nTake a stand this Christmas: stepbystep.org.uk/christmas"
     },
     "sticker": null,
-    "videoNote": "The finished video is still being edited. This is the cover.",
+    "videoNote": "Draft cut: the final edit may change slightly.",
     "media": {
      "story": [
-      "media/christmas-2026/P03-story.png"
+      "media/christmas-2026/P03-clip.mp4"
      ]
     }
    },
@@ -326,11 +326,11 @@
     }
    },
    {
-    "id": "P05",
-    "date": "2026-12-02",
+    "id": "B01",
+    "date": "2026-12-01",
     "kind": "reel",
     "format": "video",
-    "title": "Anda podcast clip (date TBC)",
+    "title": "Jess's story: Big Give is live",
     "platforms": [
      "ig",
      "fb",
@@ -338,15 +338,78 @@
     ],
     "animated": false,
     "captions": {
-     "ig": "[[the line from the clip, in Anda's words]]\n\nAnda [[surname]], [[role]] at Step by Step, on [[podcast name]]. Full episode: [[link]]\n\nFrom midday on 1 December, every gift to Step by Step is doubled for one week. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
-     "fb": "[[the line from the clip, in Anda's words]]\n\nAnda [[surname]], [[role]] at Step by Step, talking on [[podcast name]]. Listen to the full episode: [[link]]",
-     "li": "[[the line from the clip, in Anda's words]]\n\nOur [[role]], Anda [[surname]], joined [[podcast name]] to talk about [[topic]]. Full episode: [[link]]\n\n#TakeAStand #YouthHomelessness"
+     "ig": "When she was 16, home wasn't safe for Jess. Then she moved in with a host family through Step by Step.\n\n\"I didn't have to fight. I didn't have to beg. I just got it.\"\n\nThis is Jess's story, in her own words. And from today until midday on Tuesday 8 December, every gift to Step by Step through Big Give is doubled. £33 becomes £66 for a young person like Jess.\n\nGive now: link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "When she was 16, home wasn't safe for Jess. Then she moved in with a host family through Step by Step, and for the first time she was part of a bigger family.\n\n\"I didn't have to fight. I didn't have to beg. I just got it.\"\n\nThis is Jess's story, in her own words. Big Give is now live: until midday on Tuesday 8 December, every gift to Step by Step is doubled while our match fund lasts.\n\nGive here: donate.biggive.org/campaign/a05WS00000FUCJFYA5",
+     "li": "Jess was 16 when home stopped being safe. Through Step by Step she moved in with a host family in Supported Lodgings, and her life took a different path. She's now training to be a primary school teacher.\n\nShe tells her story here, in her own words.\n\nOur Big Give Christmas Challenge is live: until midday on Tuesday 8 December, every gift is doubled while our match fund lasts.\n\ndonate.biggive.org/campaign/a05WS00000FUCJFYA5\n\n#TakeAStand #BigGive #YouthHomelessness"
     },
     "sticker": null,
-    "videoNote": "The finished video is still being edited. This is the cover.",
+    "videoNote": "Draft cut: the final edit may change slightly.",
     "media": {
      "story": [
-      "media/christmas-2026/P05-story.png"
+      "media/christmas-2026/B01-clip.mp4"
+     ]
+    }
+   },
+   {
+    "id": "B02",
+    "date": "2026-12-01",
+    "kind": "story",
+    "format": "static",
+    "title": "We're live",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {},
+    "sticker": "Link sticker: our Big Give page. Then reshare the Jess reel (B01) to stories.",
+    "videoNote": null,
+    "media": {
+     "story": [
+      "media/christmas-2026/B02-story.png"
+     ]
+    }
+   },
+   {
+    "id": "S08",
+    "date": "2026-12-02",
+    "kind": "story",
+    "format": "static",
+    "title": "Progress (daily template)",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {},
+    "sticker": "Link sticker: our Big Give page",
+    "videoNote": null,
+    "media": {
+     "story": [
+      "media/christmas-2026/S08-story.png"
+     ]
+    }
+   },
+   {
+    "id": "B03",
+    "date": "2026-12-02",
+    "kind": "reel",
+    "format": "video",
+    "title": "The duvet",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "\"Just having a duvet made me feel comforted.\"\n\nWhen Jess moved on from her host family, Step by Step paid for her duvet. She still has it.\n\nThat's what your gift does: the small things that make a young person feel at home. Until midday on Tuesday 8 December, it's doubled. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "\"Only a teeny tiny fraction of the donations, but that made all the difference to me.\"\n\nWhen Jess moved on from her host family, Step by Step paid for her duvet. She still has the same one today.\n\nThat's what your gift does. Until midday on Tuesday 8 December, every gift through our Big Give page is doubled while our match fund lasts: donate.biggive.org/campaign/a05WS00000FUCJFYA5"
+    },
+    "sticker": null,
+    "videoNote": "Draft cut: the final edit may change slightly.",
+    "media": {
+     "story": [
+      "media/christmas-2026/B03-clip.mp4"
      ]
     }
    },
@@ -367,6 +430,429 @@
     "media": {
      "story": [
       "media/christmas-2026/S07-story.png"
+     ]
+    }
+   },
+   {
+    "id": "S12",
+    "date": "2026-12-03",
+    "kind": "story",
+    "format": "video",
+    "title": "The duvet, 11s (story)",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {},
+    "sticker": "Link sticker: our Big Give page",
+    "videoNote": "Draft cut: the final edit may change slightly.",
+    "media": {
+     "story": [
+      "media/christmas-2026/S12-clip.mp4"
+     ]
+    }
+   },
+   {
+    "id": "B04",
+    "date": "2026-12-04",
+    "kind": "reel",
+    "format": "video",
+    "title": "Not on my own",
+    "platforms": [
+     "ig",
+     "fb",
+     "li"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "\"She came with me to all of the meetings, so I wasn't on my own.\"\n\nEvery young person we support has someone in their corner. Your gift keeps it that way, and until midday on Tuesday 8 December it's doubled. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "\"My support worker took me every step of the way.\"\n\nNormally you'd go to your parents for that kind of comfort. When that isn't possible, Step by Step is there.\n\nUntil midday on Tuesday 8 December, every gift through our Big Give page is doubled while our match fund lasts: donate.biggive.org/campaign/a05WS00000FUCJFYA5",
+     "li": "\"She came with me to all of the meetings, so I wasn't on my own.\"\n\nJess on her Step by Step support worker. Youth homelessness is about more than a roof: it's having someone beside you through the meetings, the forms and the hard days.\n\nOur Big Give Christmas Challenge runs until midday on Tuesday 8 December, with every gift doubled.\n\n#TakeAStand #BigGive"
+    },
+    "sticker": null,
+    "videoNote": "Draft cut: the final edit may change slightly.",
+    "media": {
+     "story": [
+      "media/christmas-2026/B04-clip.mp4"
+     ]
+    }
+   },
+   {
+    "id": "B05",
+    "date": "2026-12-07",
+    "kind": "feed",
+    "format": "static",
+    "title": "One day left",
+    "platforms": [
+     "ig",
+     "fb",
+     "li"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "One day left. Big Give closes at midday tomorrow, Tuesday 8 December, and until then every gift to Step by Step is doubled while our match fund lasts.\n\n£33 gives a young person two safe nights instead of one. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "One day left. Big Give closes at midday tomorrow, Tuesday 8 December. Until then, every gift to Step by Step is doubled while our match fund lasts.\n\nIf you've been meaning to give, now's the time to make it count twice: donate.biggive.org/campaign/a05WS00000FUCJFYA5",
+     "li": "One day left in our Big Give Christmas Challenge. Until midday tomorrow, every gift to Step by Step is doubled while our match fund lasts.\n\nThank you to everyone who has given, shared and pledged so far.\n\ndonate.biggive.org/campaign/a05WS00000FUCJFYA5\n\n#TakeAStand #BigGive"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/B05-feed.png"
+     ],
+     "story": [
+      "media/christmas-2026/B05-story.png"
+     ]
+    }
+   },
+   {
+    "id": "B06",
+    "date": "2026-12-08",
+    "kind": "reel",
+    "format": "video",
+    "title": "Even if it's tiny (final hours)",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "\"If you're thinking about donating, just do it, even if it's tiny. Because it all adds up.\"\n\nFinal hours: every gift to Step by Step is doubled until 12pm today. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "\"What may look like a five pound note to you could go towards something much more impactful.\"\n\nFinal hours. Every gift to Step by Step through Big Give is doubled until 12pm today: donate.biggive.org/campaign/a05WS00000FUCJFYA5"
+    },
+    "sticker": null,
+    "videoNote": "Draft cut: the final edit may change slightly.",
+    "media": {
+     "story": [
+      "media/christmas-2026/B06-clip.mp4"
+     ]
+    }
+   },
+   {
+    "id": "T01",
+    "date": "2026-12-08",
+    "kind": "feed",
+    "format": "static",
+    "title": "Thank you: we raised [[£X]]",
+    "platforms": [
+     "ig",
+     "fb",
+     "li"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "Thank you. Big Give week raised [[£X]] for young people facing homelessness, and every one of you made it happen.\n\nMissed it? You can still take a stand this Christmas: link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "Thank you to every single person who gave, shared and cheered us on. Big Give week raised [[£X]] for young people facing homelessness.\n\nThe need doesn't stop when the match does. If you missed it, you can still take a stand this Christmas: stepbystep.org.uk/christmas",
+     "li": "Thank you. Our Big Give Christmas Challenge raised [[£X]] for young people facing homelessness across the South of England, with [[number]] people giving.\n\nA special thank you to our pledgers [[names, with their OK]] and to every team that took part.\n\nOur Christmas appeal continues: stepbystep.org.uk/christmas\n\n#TakeAStand #BigGive"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/T01-feed.png"
+     ],
+     "story": [
+      "media/christmas-2026/T01-story.png"
+     ]
+    }
+   },
+   {
+    "id": "S09",
+    "date": "2026-12-09",
+    "kind": "story",
+    "format": "static",
+    "title": "Missed Big Give?",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {},
+    "sticker": "Link sticker: stepbystep.org.uk/christmas",
+    "videoNote": null,
+    "media": {
+     "story": [
+      "media/christmas-2026/S09-story.png"
+     ]
+    }
+   },
+   {
+    "id": "T02",
+    "date": "2026-12-10",
+    "kind": "reel",
+    "format": "video",
+    "title": "Christmas used to be a performance",
+    "platforms": [
+     "ig",
+     "fb",
+     "li"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "\"Christmas is such a big show.\"\n\nFor Jess, Christmas used to mean keeping the peace. Now? \"There's no performing.\"\n\nHelp another young person find a Christmas where they can just be themselves. Take a stand: link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "\"You knew what you needed to do to keep the peace.\"\n\nJess remembers Christmases that felt like a performance. With a host family through Step by Step, she found one where she could just enjoy it.\n\nTake a stand this Christmas: stepbystep.org.uk/christmas",
+     "li": "\"Christmas is such a big show.\" For many young people, Christmas at home isn't safe or easy. Jess tells us what changed when she found a host family through Step by Step.\n\nstepbystep.org.uk/christmas\n\n#TakeAStand #YouthHomelessness"
+    },
+    "sticker": null,
+    "videoNote": "Draft cut: the final edit may change slightly.",
+    "media": {
+     "story": [
+      "media/christmas-2026/T02-clip.mp4"
+     ]
+    }
+   },
+   {
+    "id": "L02",
+    "date": "2026-12-11",
+    "kind": "feed",
+    "format": "static",
+    "title": "Teams who took a stand (LinkedIn)",
+    "platforms": [
+     "li"
+    ],
+    "animated": false,
+    "captions": {
+     "li": "Thank you to the businesses and teams who took a stand with us in Big Give week: [[names and LinkedIn tags, with their OK]].\n\nYour collections, jumper days and matched giving went twice as far for young people facing homelessness.\n\nThinking about your team's giving for 2027? We'd love to talk: fundraising@stepbystep.org.uk\n\n#TakeAStand #CorporateGiving"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/L02-feed.png"
+     ]
+    }
+   },
+   {
+    "id": "T03",
+    "date": "2026-12-12",
+    "kind": "reel",
+    "format": "video",
+    "title": "A house, not a home",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "\"You have a house, and then you have a home.\"\n\nFor Jess, the difference was a host family who made her feel like she belonged. £33 gives a young person a safe night this Christmas. Take a stand: link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "\"No one made a big deal about me being there. It was the new normal, which then made it feel like a home.\"\n\nThis Christmas, help a young person find a home, not just a house. £33 gives a safe night: stepbystep.org.uk/christmas"
+    },
+    "sticker": null,
+    "videoNote": "Draft cut: the final edit may change slightly.",
+    "media": {
+     "story": [
+      "media/christmas-2026/T03-clip.mp4"
+     ]
+    }
+   },
+   {
+    "id": "S10",
+    "date": "2026-12-14",
+    "kind": "story",
+    "format": "video",
+    "title": "Meet Jess: Christmas now (story)",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {},
+    "sticker": "Link sticker: stepbystep.org.uk/christmas. Quiz sticker: 'Who's basically Mrs Claus?'",
+    "videoNote": "Draft cut: the final edit may change slightly.",
+    "media": {
+     "story": [
+      "media/christmas-2026/S10-clip.mp4"
+     ]
+    }
+   },
+   {
+    "id": "P05",
+    "date": "2026-12-15",
+    "kind": "reel",
+    "format": "video",
+    "title": "Anda podcast clip (date TBC)",
+    "platforms": [
+     "ig",
+     "fb",
+     "li"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "[[the line from the clip, in Anda's words]]\n\nAnda [[surname]], [[role]] at Step by Step, on [[podcast name]]. Full episode: [[link]]\n\nFrom midday on 1 December, every gift to Step by Step is doubled for one week. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "[[the line from the clip, in Anda's words]]\n\nAnda [[surname]], [[role]] at Step by Step, talking on [[podcast name]]. Listen to the full episode: [[link]]",
+     "li": "[[the line from the clip, in Anda's words]]\n\nOur [[role]], Anda [[surname]], joined [[podcast name]] to talk about [[topic]]. Full episode: [[link]]\n\n#TakeAStand #YouthHomelessness"
+    },
+    "sticker": null,
+    "videoNote": "The video is still to be made.",
+    "media": {
+     "story": [
+      "media/christmas-2026/P05-story.png"
+     ]
+    }
+   },
+   {
+    "id": "T04",
+    "date": "2026-12-17",
+    "kind": "reel",
+    "format": "video",
+    "title": "Let's make it happen",
+    "platforms": [
+     "ig",
+     "fb",
+     "li"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "\"Little me wanted to be a teacher, but probably would have never pursued it because I didn't have anyone believing in me.\"\n\nJess is now training to teach primary school. Someone believing in you changes everything. Take a stand this Christmas: link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "\"Little me wanted to be a teacher, but probably would have never pursued it because I didn't have anyone believing in me.\"\n\nToday Jess studies primary teaching, and she really, really loves it. That's what someone in your corner can do.\n\nTake a stand this Christmas: stepbystep.org.uk/christmas",
+     "li": "\"The path of my life has completely changed.\"\n\nJess was 16 when she came to Step by Step. Today she's training to be a primary school teacher. Youth homelessness is preventable, and young people are capable of extraordinary things when someone believes in them.\n\nstepbystep.org.uk/christmas\n\n#TakeAStand #YouthHomelessness"
+    },
+    "sticker": null,
+    "videoNote": "Draft cut: the final edit may change slightly.",
+    "media": {
+     "story": [
+      "media/christmas-2026/T04-clip.mp4"
+     ]
+    }
+   },
+   {
+    "id": "S11",
+    "date": "2026-12-18",
+    "kind": "story",
+    "format": "static",
+    "title": "Seven sleeps",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {},
+    "sticker": "Link sticker: stepbystep.org.uk/christmas",
+    "videoNote": null,
+    "media": {
+     "story": [
+      "media/christmas-2026/S11-story.png"
+     ]
+    }
+   },
+   {
+    "id": "T05",
+    "date": "2026-12-19",
+    "kind": "feed",
+    "format": "static",
+    "title": "£33 a safe night",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "£33 gives a young person facing homelessness somewhere safe to sleep this Christmas, and someone checking in on them.\n\nTake a stand: link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "£33 gives a young person facing homelessness a safe night this Christmas, with Step by Step beside them long after the decorations come down.\n\nTake a stand: stepbystep.org.uk/christmas"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/T05-feed.png"
+     ]
+    }
+   },
+   {
+    "id": "T06",
+    "date": "2026-12-21",
+    "kind": "reel",
+    "format": "video",
+    "title": "Christmas at Step by Step",
+    "platforms": [
+     "ig",
+     "fb",
+     "li"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "This Christmas, [[X]] young people will wake up with Step by Step. Our staff will be there too, setting the table and making it feel like Christmas.\n\nTake a stand and help make it a good one: link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "On Christmas Day, [[X]] young people will be with Step by Step, and so will our staff. Crackers, a proper dinner and people glad you're there.\n\nHelp make it happen: stepbystep.org.uk/christmas",
+     "li": "Christmas Day is a working day for many of our staff. Thank you to everyone who'll be on shift so that [[X]] young people have a Christmas with people glad they're there.\n\n#TakeAStand #Christmas"
+    },
+    "sticker": null,
+    "videoNote": "The video is still to be made.",
+    "media": {}
+   },
+   {
+    "id": "T07",
+    "date": "2026-12-24",
+    "kind": "feed",
+    "format": "static",
+    "title": "Merry Christmas",
+    "platforms": [
+     "ig",
+     "fb",
+     "li"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "Merry Christmas from all of us at Step by Step. 🎄\n\nThank you to every supporter, host, foster carer, volunteer and member of staff who's made this Christmas better for young people.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "Merry Christmas from all of us at Step by Step.\n\nThank you to every supporter, host, foster carer, volunteer and member of staff who's made this Christmas better for young people. We couldn't do it without you.",
+     "li": "Merry Christmas from all of us at Step by Step.\n\nThank you to our supporters, partners, hosts, foster carers, volunteers and staff, especially those working over Christmas so young people aren't on their own.\n\n#TakeAStand"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/T07-feed.png"
+     ],
+     "story": [
+      "media/christmas-2026/T07-story.png"
+     ]
+    }
+   },
+   {
+    "id": "T08",
+    "date": "2026-12-28",
+    "kind": "reel",
+    "format": "video",
+    "title": "It'll be okay (New Year)",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "What would Jess say to herself at 16?\n\n\"It'll be okay. You'll figure it out.\"\n\nHelp another young person start 2027 with someone in their corner: link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "We asked Jess what she'd say to herself at 16.\n\n\"Just being able to tell my little self, like, it'll be fine. You'll figure it out.\"\n\nHelp a young person start the new year with someone in their corner: stepbystep.org.uk/christmas"
+    },
+    "sticker": null,
+    "videoNote": "Draft cut: the final edit may change slightly.",
+    "media": {
+     "story": [
+      "media/christmas-2026/T08-clip.mp4"
+     ]
+    }
+   },
+   {
+    "id": "T09",
+    "date": "2026-12-30",
+    "kind": "feed",
+    "format": "static",
+    "title": "Start 2027 by taking a stand",
+    "platforms": [
+     "ig",
+     "fb",
+     "li"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "Homelessness doesn't stop for the holidays, and neither do we.\n\nHelp a young person start 2027 safe, supported and with someone in their corner. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "Homelessness doesn't stop for the holidays, and neither do we.\n\nBefore the year's out, help a young person start 2027 safe and supported: stepbystep.org.uk/christmas",
+     "li": "As 2026 closes, thank you to everyone who has stood with young people facing homelessness this year. If you'd like to start 2027 by taking a stand, here's how: stepbystep.org.uk/christmas\n\n#TakeAStand"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/T09-feed.png"
      ]
     }
    }
