@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Step by Step · Social sign-off</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root{--purple:#412D7D;--pink:#ED288D;--green:#A1CD3D;--yellow:#F0E904;--bg:#f4f2f8;--card:#fff;--ink:#1d1830;--muted:#6b6480;--line:#e2ddec;--head:"Bebas Neue",Impact,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Verdana,Geneva,sans-serif}
+a{color:var(--purple)}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+/* gate */
+#gate{position:fixed;inset:0;background:var(--purple);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px}
+#gate form{background:#fff;border-radius:18px;padding:28px;max-width:360px;width:100%;text-align:center}
+#gate img{width:220px;background:var(--purple);padding:14px 18px;border-radius:10px}
+#gate h1{font:400 34px/1 var(--head);letter-spacing:.02em;color:var(--purple);margin:18px 0 6px}
+#gate input{width:100%;font:inherit;padding:12px 14px;border:2px solid var(--line);border-radius:10px;margin-top:14px}
+#gate button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:10px;background:var(--pink);color:#fff;font-weight:bold}
+#gate .err{color:var(--pink);font-size:13px;min-height:20px;margin-top:8px}
+/* header */
+header{background:var(--purple);color:#fff;position:sticky;top:0;z-index:10}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding-block:12px}
+header img{height:30px}
+header h1{font:400 28px/1 var(--head);letter-spacing:.03em;margin:0}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.tabs button{border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;border-radius:999px;padding:5px 12px;font-size:13px}
+.tabs button[aria-pressed=true]{background:var(--yellow);border-color:var(--yellow);color:#111;font-weight:bold}
+.intro{padding:22px 0 4px}
+.intro h2{font:400 44px/1 var(--head);letter-spacing:.02em;color:var(--purple);margin:0}
+.intro p{max-width:72ch;color:var(--muted);margin:8px 0 0}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px;align-items:center}
+.filters button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px;font-size:13px}
+.filters button[aria-pressed=true]{border-color:var(--purple);box-shadow:inset 0 0 0 1px var(--purple);font-weight:bold}
+.counts{font-size:13px;color:var(--muted);margin-left:auto}
+/* week */
+.week{margin-top:26px}
+.week-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;border-bottom:3px solid var(--line);padding-bottom:8px;margin-bottom:14px}
+.week-head h3{font:400 30px/1 var(--head);letter-spacing:.02em;color:var(--purple);margin:0}
+.week-head .ph{font-size:12px;color:var(--muted)}
+.week-head button{margin-left:auto;border:0;background:var(--green);color:#1d1830;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:bold}
+/* post */
+.post{background:var(--card);border-radius:16px;padding:16px;margin-bottom:16px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;border:2px solid transparent}
+.post.sel{border-color:var(--purple)}
+@media (max-width:760px){.post{grid-template-columns:1fr}}
+.viewer{position:relative;width:300px;max-width:100%;margin:0 auto}
+.viewer .frame{border-radius:14px;overflow:hidden;background:#111;position:relative}
+.viewer img,.viewer video{display:block;width:100%;height:auto}
+.viewer .nav{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:0;background:rgba(255,255,255,.9);font-size:16px}
+.viewer .nav.l{left:8px}.viewer .nav.r{right:8px}
+.viewer .count{position:absolute;top:8px;right:10px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:2px 8px;border-radius:999px}
+.sizes{display:flex;gap:6px;justify-content:center;margin-top:8px}
+.sizes button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:3px 10px;font-size:12px}
+.sizes button[aria-pressed=true]{background:var(--purple);color:#fff;border-color:var(--purple)}
+.meta .top{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.meta .ref{font-weight:bold;color:var(--muted);font-size:13px}
+.meta h4{font:400 30px/1.05 var(--head);letter-spacing:.02em;color:var(--purple);margin:6px 0 4px}
+.meta .when{font-size:13px;color:var(--muted)}
+.badge{display:inline-block;font-size:12px;font-weight:bold;border-radius:999px;padding:3px 10px}
+.b-wait{background:#efecf5;color:#4a4560}.b-ok{background:#dcefb5;color:#2d4400}.b-change{background:#fbd3e8;color:#7a0a47}
+.pick{display:inline-flex;align-items:center;gap:6px;font-size:13px;margin-left:auto}
+.pick input{width:18px;height:18px;accent-color:var(--purple)}
+.ptabs{display:flex;gap:4px;margin-top:14px;border-bottom:1px solid var(--line)}
+.ptabs button{border:0;background:none;padding:6px 12px;font-size:13px;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-1px}
+.ptabs button[aria-pressed=true]{color:var(--purple);border-bottom-color:var(--pink);font-weight:bold}
+.cap{white-space:pre-wrap;word-wrap:break-word;font-size:14px;padding:12px 2px 4px;max-width:70ch}
+.cap .more{border:0;background:none;color:var(--muted);padding:0}
+.cap mark,.note mark{background:var(--yellow);border-radius:3px;padding:0 3px}
+.note{font-size:13px;color:var(--muted);margin-top:8px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.actions a{text-decoration:none;border-radius:999px;padding:8px 16px;font-size:13px;font-weight:bold}
+.a-ok{background:var(--green);color:#1d1830}.a-change{background:var(--pink);color:#fff}.a-comment{background:#fff;color:var(--purple);border:1px solid var(--purple)}
+.thread{margin-top:16px;border-top:1px solid var(--line);padding-top:10px}
+.thread h5{margin:0 0 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.c{padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.c:last-child{border-bottom:0}
+.c .who{font-weight:bold}.c .tm{color:var(--muted);font-size:12px}
+.c .txt{white-space:pre-wrap;margin-top:2px}
+.empty{font-size:13px;color:var(--muted)}
+/* bulk bar */
+#bulk{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);background:var(--purple);color:#fff;border-radius:999px;padding:10px 12px 10px 20px;display:none;align-items:center;gap:14px;box-shadow:0 6px 24px rgba(40,20,80,.35);z-index:20;max-width:calc(100% - 32px)}
+#bulk.on{display:flex}
+#bulk a{background:var(--green);color:#1d1830;text-decoration:none;font-weight:bold;border-radius:999px;padding:8px 16px;white-space:nowrap}
+#bulk button{border:0;background:none;color:#fff;text-decoration:underline;font-size:13px}
+footer{color:var(--muted);font-size:12px;padding:30px 0 90px}
+</style>
+</head>
+<body>
+<div id="gate">
+  <form id="gateForm" autocomplete="off">
+    <img src="sbs-logo-white.png" alt="Step by Step">
+    <h1>Social sign-off</h1>
+    <p style="margin:0;color:#6b6480;font-size:14px">Posts for review before they go out.</p>
+    <input id="pw" type="password" placeholder="Password" aria-label="Password">
+    <button type="submit">Open</button>
+    <div class="err" id="err"></div>
+  </form>
+</div>
+
+<header><div class="wrap">
+  <img src="sbs-logo-white.png" alt="Step by Step">
+  <h1>Social sign-off</h1>
+  <nav class="tabs" id="campaignTabs" aria-label="Campaigns"></nav>
+</div></header>
+
+<main class="wrap">
+  <section class="intro">
+    <h2 id="campName"></h2>
+    <p>Look through each post, then approve it or say what needs changing. Tick several posts to approve them in one go. Comments appear under each post within about 10 minutes.</p>
+    <div class="filters" id="filters">
+      <button data-f="all" aria-pressed="true">All posts</button>
+      <button data-f="wait" aria-pressed="false">Waiting for sign-off</button>
+      <button data-f="change" aria-pressed="false">Changes needed</button>
+      <button data-f="ok" aria-pressed="false">Approved</button>
+      <span class="counts" id="counts"></span>
+    </div>
+  </section>
+  <div id="weeks"></div>
+  <footer>Step by Step · Young People. Hard Times. Bright Futures. Drafts for internal review: please don't share.</footer>
+</main>
+
+<div id="bulk" role="region" aria-label="Selected posts">
+  <span id="bulkText"></span>
+  <a id="bulkGo" target="_blank" rel="noopener">Approve selected</a>
+  <button id="bulkClear" type="button">Clear</button>
+</div>
+
+<script src="config.js"></script>
+<script>
+const R = window.REVIEW;
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const marks = s => esc(s).replace(/\[\[(.+?)\]\]/g, "<mark>$1</mark>");
+const PL = { ig: "Instagram", fb: "Facebook", li: "LinkedIn" };
+const KIND = { feed: "Feed post", story: "Story", reel: "Reel" };
+const D = s => new Date(s + "T12:00:00");
+const fmt = (s, o) => D(s).toLocaleDateString("en-GB", o || { weekday: "short", day: "numeric", month: "short" });
+const store = { get: k => { try { return sessionStorage.getItem(k); } catch { return null; } }, set: (k, v) => { try { sessionStorage.setItem(k, v); } catch {} } };
+
+/* ---------- light password gate ---------- */
+async function sha(t) { const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t)); return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, "0")).join(""); }
+if (store.get("ok") === R.passwordHash) $("#gate").remove();
+else $("#gateForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  if (await sha($("#pw").value.trim().toLowerCase()) === R.passwordHash) { store.set("ok", R.passwordHash); $("#gate").remove(); }
+  else $("#err").textContent = "That's not the password.";
+});
+
+/* ---------- data ---------- */
+let CAMPAIGNS = [], COMMENTS = {}, current = null, filter = "all";
+const selected = new Set();
+const formLink = (camp, ids, decision) => {
+  // %20 rather than "+" for spaces: the form reads %20 reliably.
+  const q = { Campaign: camp.name, Posts: ids.join(", "), ...(decision ? { Decision: decision } : {}) };
+  return R.formUrl + "?" + Object.entries(q).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join("&");
+};
+const thread = (camp, id) => ((COMMENTS[camp.name] || {})[id] || []).slice().sort((a, b) => a.date - b.date);
+function state(camp, id) {
+  const t = thread(camp, id).filter(c => c.decision === "Approved" || c.decision === "Changes needed");
+  if (!t.length) return { k: "wait", label: "Waiting for sign-off" };
+  const last = t[t.length - 1];
+  return last.decision === "Approved" ? { k: "ok", label: `Approved by ${last.name}` } : { k: "change", label: `Changes needed (${last.name})` };
+}
+
+/* ---------- render ---------- */
+function weekStart(s) { const d = D(s); d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); return d.toISOString().slice(0, 10); }
+function viewer(camp, p) {
+  const sizes = Object.keys(p.media).filter(k => p.media[k].length);
+  if (!sizes.length) return `<div class="viewer"><div class="frame" style="aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;padding:20px;text-align:center">Artwork to come</div></div>`;
+  const size = sizes[0];
+  return `<div class="viewer" data-id="${p.id}" data-size="${size}" data-i="0">${frame(p, size, 0)}
+    ${sizes.length > 1 ? `<div class="sizes">${sizes.map(s => `<button type="button" data-size="${s}" aria-pressed="${s === size}">${s === "feed" ? "Feed" : "Story"}</button>`).join("")}</div>` : ""}</div>`;
+}
+function frame(p, size, i) {
+  const list = p.media[size], src = list[i];
+  const el = /\.mp4$/.test(src) ? `<video src="${src}" autoplay muted loop playsinline controls></video>` : `<img src="${src}" alt="${esc(p.title)}, ${size} ${i + 1}" loading="lazy">`;
+  return `<div class="frame">${el}${list.length > 1 ? `<span class="count">${i + 1} / ${list.length}</span><button class="nav l" data-step="-1" aria-label="Previous">‹</button><button class="nav r" data-step="1" aria-label="Next">›</button>` : ""}</div>`;
+}
+function caption(text, limit = 220) {
+  if (!text) return "";
+  if (text.length <= limit) return `<div class="cap">${marks(text)}</div>`;
+  const cut = text.slice(0, text.lastIndexOf(" ", limit));
+  return `<div class="cap" data-full="${encodeURIComponent(text)}">${marks(cut)}… <button class="more" type="button">more</button></div>`;
+}
+function postHTML(camp, p) {
+  const st = state(camp, p.id), plats = Object.keys(p.captions).filter(k => p.captions[k]);
+  const th = thread(camp, p.id);
+  return `<article class="post ${selected.has(p.id) ? "sel" : ""}" id="post-${p.id}" data-id="${p.id}" data-state="${st.k}">
+    ${viewer(camp, p)}
+    <div class="meta">
+      <div class="top"><span class="ref">${p.id}</span><span class="badge b-${st.k}">${esc(st.label)}</span>
+        <label class="pick"><input type="checkbox" data-pick="${p.id}" ${selected.has(p.id) ? "checked" : ""}> Select</label></div>
+      <h4>${esc(p.title)}</h4>
+      <div class="when">${fmt(p.date, { weekday: "long", day: "numeric", month: "long" })} · ${KIND[p.kind]}${p.animated ? " (animated)" : ""} · ${p.platforms.map(x => PL[x]).join(", ")}</div>
+      ${plats.length ? `<div class="ptabs" role="tablist">${plats.map((k, i) => `<button type="button" data-cap="${k}" aria-pressed="${i === 0}">${PL[k]}</button>`).join("")}</div>
+        <div class="capbox" data-caps="${encodeURIComponent(JSON.stringify(p.captions))}">${caption(p.captions[plats[0]])}</div>`
+        : `<p class="note">Story: the words are on the image.</p>`}
+      ${p.sticker ? `<p class="note"><b>Added in the app:</b> ${marks(p.sticker)}</p>` : ""}
+      ${p.videoNote ? `<p class="note">${esc(p.videoNote)}</p>` : ""}
+      <div class="actions">
+        <a class="a-ok" target="_blank" rel="noopener" href="${formLink(camp, [p.id], "Approved")}">Approve</a>
+        <a class="a-change" target="_blank" rel="noopener" href="${formLink(camp, [p.id], "Changes needed")}">Changes needed</a>
+        <a class="a-comment" target="_blank" rel="noopener" href="${formLink(camp, [p.id], "Comment only")}">Comment</a>
+      </div>
+      <div class="thread"><h5>Comments and sign-offs</h5>
+        ${th.length ? th.map(c => `<div class="c"><span class="who">${esc(c.name)}</span>${c.team ? `, ${esc(c.team)}` : ""} · <span class="badge ${c.decision === "Approved" ? "b-ok" : c.decision === "Changes needed" ? "b-change" : "b-wait"}">${esc(c.decision || "Comment")}</span>
+          <span class="tm">${new Date(c.date).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}${c.bulk ? " · approved with others" : ""}</span>
+          ${c.comment ? `<div class="txt">${esc(c.comment)}</div>` : ""}</div>`).join("") : `<div class="empty">Nothing yet.</div>`}
+      </div>
+    </div></article>`;
+}
+function render() {
+  const camp = current;
+  $("#campName").textContent = camp.name;
+  $("#campaignTabs").innerHTML = CAMPAIGNS.length > 1 ? CAMPAIGNS.map(c => `<button type="button" data-camp="${c.slug}" aria-pressed="${c === camp}">${esc(c.name)}</button>`).join("") : "";
+  const posts = camp.posts.filter(p => filter === "all" || state(camp, p.id).k === filter);
+  const all = camp.posts.map(p => state(camp, p.id).k);
+  $("#counts").textContent = `${all.filter(k => k === "ok").length} approved · ${all.filter(k => k === "change").length} changes needed · ${all.filter(k => k === "wait").length} waiting`;
+  const weeks = {};
+  posts.forEach(p => (weeks[weekStart(p.date)] ||= []).push(p));
+  $("#weeks").innerHTML = Object.keys(weeks).sort().map(w => {
+    const ph = (camp.phases || []).filter(x => w <= x.end && x.start <= weeks[w][weeks[w].length - 1].date).map(x => x.name).join(" / ");
+    const ids = weeks[w].filter(p => state(camp, p.id).k !== "ok").map(p => p.id);
+    return `<section class="week"><div class="week-head"><h3>Week of ${fmt(w, { day: "numeric", month: "long" })}</h3><span class="ph">${esc(ph)}</span>
+      ${ids.length ? `<button type="button" data-weekall="${ids.join(",")}">Approve all ${ids.length} this week</button>` : ""}</div>
+      ${weeks[w].map(p => postHTML(camp, p)).join("")}</section>`;
+  }).join("") || `<p class="empty">No posts here.</p>`;
+  bulkBar();
+}
+function bulkBar() {
+  const n = selected.size;
+  $("#bulk").classList.toggle("on", n > 0);
+  if (!n) return;
+  const ids = current.posts.map(p => p.id).filter(id => selected.has(id));
+  $("#bulkText").textContent = `${n} post${n > 1 ? "s" : ""} selected`;
+  $("#bulkGo").href = formLink(current, ids, "Approved");
+}
+
+/* ---------- interactions ---------- */
+document.addEventListener("click", e => {
+  const t = e.target;
+  const camp = t.closest("[data-camp]");
+  if (camp) { current = CAMPAIGNS.find(c => c.slug === camp.dataset.camp); selected.clear(); render(); return; }
+  const f = t.closest("[data-f]");
+  if (f) { filter = f.dataset.f; document.querySelectorAll("[data-f]").forEach(b => b.setAttribute("aria-pressed", b === f)); render(); return; }
+  const wk = t.closest("[data-weekall]");
+  if (wk) { wk.dataset.weekall.split(",").forEach(id => selected.add(id)); render(); $("#bulkGo").focus(); return; }
+  if (t.id === "bulkClear") { selected.clear(); render(); return; }
+  if (t.classList.contains("more")) { const c = t.closest(".cap"); c.innerHTML = marks(decodeURIComponent(c.dataset.full)); return; }
+  const cap = t.closest("[data-cap]");
+  if (cap) {
+    const box = cap.closest(".meta").querySelector(".capbox"), caps = JSON.parse(decodeURIComponent(box.dataset.caps));
+    cap.parentElement.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b === cap));
+    box.innerHTML = caption(caps[cap.dataset.cap]); return;
+  }
+  const v = t.closest(".viewer");
+  if (v && (t.closest(".nav") || t.closest(".sizes button"))) {
+    const p = current.posts.find(x => x.id === v.dataset.id);
+    if (t.closest(".sizes button")) { v.dataset.size = t.closest("button").dataset.size; v.dataset.i = 0; v.querySelectorAll(".sizes button").forEach(b => b.setAttribute("aria-pressed", b.dataset.size === v.dataset.size)); }
+    else { const n = p.media[v.dataset.size].length; v.dataset.i = (Number(v.dataset.i) + Number(t.closest(".nav").dataset.step) + n) % n; }
+    v.querySelector(".frame").outerHTML = frame(p, v.dataset.size, Number(v.dataset.i));
+  }
+});
+document.addEventListener("change", e => {
+  const id = e.target.dataset.pick;
+  if (!id) return;
+  e.target.checked ? selected.add(id) : selected.delete(id);
+  e.target.closest(".post").classList.toggle("sel", e.target.checked);
+  bulkBar();
+});
+
+/* ---------- load ---------- */
+(async () => {
+  CAMPAIGNS = await fetch("data/campaigns.json", { cache: "no-store" }).then(r => r.json());
+  COMMENTS = await fetch("data/comments.json?t=" + Date.now(), { cache: "no-store" }).then(r => r.json()).catch(() => ({}));
+  const want = new URLSearchParams(location.search).get("campaign");
+  current = CAMPAIGNS.find(c => c.slug === want) || CAMPAIGNS[CAMPAIGNS.length - 1];
+  render();
+})();
+</script>
+</body>
+</html>

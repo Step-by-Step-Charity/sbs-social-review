@@ -1,0 +1,375 @@
+[
+ {
+  "slug": "christmas-2026",
+  "name": "Christmas 2026",
+  "phases": [
+   {
+    "name": "Host fortnight",
+    "start": "2026-11-05",
+    "end": "2026-11-19",
+    "color": "#ED288D"
+   },
+   {
+    "name": "Build-up",
+    "start": "2026-11-20",
+    "end": "2026-11-30",
+    "color": "#F0E904"
+   },
+   {
+    "name": "Big Give week",
+    "start": "2026-12-01",
+    "end": "2026-12-08",
+    "color": "#A1CD3D"
+   },
+   {
+    "name": "Take a Stand",
+    "start": "2026-12-08",
+    "end": "2026-12-31",
+    "color": "#412D7D"
+   }
+  ],
+  "posts": [
+   {
+    "id": "P01",
+    "date": "2026-11-16",
+    "kind": "feed",
+    "format": "carousel",
+    "title": "What is Big Give?",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "From midday on Tuesday 1 December, every gift to Step by Step through Big Give is doubled for one week. Swipe to see how it works.\n\nA gift of £25 becomes £50, and £100 becomes £200, for young people facing homelessness across southern England.\n\nMake a donation promise now and we'll remind you when it opens. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "From midday on Tuesday 1 December, every gift to Step by Step through Big Give is doubled for one week. £25 becomes £50, and £100 becomes £200, at no extra cost to you.\n\nHow it works:\n1. Wait until midday on Tuesday 1 December.\n2. Give on our Big Give page. Only gifts made there are doubled.\n3. Tick Gift Aid if you're a UK taxpayer.\n\nMake a donation promise now and we'll remind you when it opens: stepbystep.org.uk/big-give\n\nQuestions? fundraising@stepbystep.org.uk or 01252 346 107.\n\n#TakeAStand #BigGive"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/P01-c1-feed.png",
+      "media/christmas-2026/P01-c2-feed.png",
+      "media/christmas-2026/P01-c3-feed.png",
+      "media/christmas-2026/P01-c4-feed.png",
+      "media/christmas-2026/P01-c5-feed.png"
+     ]
+    }
+   },
+   {
+    "id": "L01",
+    "date": "2026-11-18",
+    "kind": "feed",
+    "format": "static",
+    "title": "Every four minutes",
+    "platforms": [
+     "ig",
+     "fb",
+     "li"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "Every four minutes, a young person in the UK faces homelessness.\n\nIt doesn't have to be that way. A safe home, the right support and someone in their corner can stop it happening, not just pick up the pieces. That's what we do, every day, across the South of England.\n\nFrom midday on 1 December, every gift to Step by Step is doubled for one week. Make a donation promise: link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "Every four minutes, a young person in the UK faces homelessness. That's 123,934 young people last year (Centrepoint Databank 2024-25).\n\nIt doesn't have to be that way. With a safe home, the right support and someone in their corner, youth homelessness can be prevented. That's what Step by Step does across Hampshire, Surrey, Dorset, Berkshire, Wiltshire and West Sussex.\n\nFrom midday on 1 December, every gift to Step by Step through Big Give is doubled for one week. Make a donation promise and we'll remind you: stepbystep.org.uk/big-give",
+     "li": "Every four minutes, a young person in the UK faces homelessness. That's 123,934 young people in 2024-25 (Centrepoint Databank).\n\nIt doesn't have to be that way. With a safe home, the right support and someone in their corner, youth homelessness can be prevented. That's what Step by Step does across Hampshire, Surrey, Dorset, Berkshire, Wiltshire and West Sussex.\n\nFrom midday on 1 December, every gift to Step by Step through the Big Give Christmas Challenge is doubled for one week. Companies can give too: for £500 or more, a bank transfer through a free Big Give donor account is easiest, set up before 1 December.\n\nTalk to us: fundraising@stepbystep.org.uk\n\n#TakeAStand #BigGive #YouthHomelessness #CorporateGiving"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/L01-feed.png"
+     ]
+    }
+   },
+   {
+    "id": "S01",
+    "date": "2026-11-20",
+    "kind": "story",
+    "format": "static",
+    "title": "Countdown: 11 days",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {},
+    "sticker": "Countdown sticker: 'Big Give: gifts doubled', ending 1 Dec 12:00. Link sticker: stepbystep.org.uk/big-give",
+    "videoNote": null,
+    "media": {
+     "story": [
+      "media/christmas-2026/S01-story.png"
+     ]
+    }
+   },
+   {
+    "id": "P02",
+    "date": "2026-11-20",
+    "kind": "feed",
+    "format": "static",
+    "title": "Can we get to [[number]]?",
+    "platforms": [
+     "ig",
+     "fb",
+     "li"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "Here's our challenge: can we get [[number]] people giving to Step by Step in Big Give week?\n\nThanks to our pledgers, every gift from midday on 1 December is doubled for one week. Every single one gets us closer.\n\nMake a donation promise now and we'll remind you when it opens. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "Here's our challenge: can we get [[number]] people giving to Step by Step in Big Give week?\n\nThanks to our pledgers, every gift from midday on 1 December is doubled for one week, so every one of you counts twice.\n\nMake a donation promise and we'll remind you when it opens: stepbystep.org.uk/big-give",
+     "li": "Our Big Give challenge: can we get [[number]] people giving to Step by Step between 1 and 8 December?\n\nThanks to the businesses and individuals who pledged to our match fund, every gift that week is doubled for young people facing homelessness. If your team would like to be part of it, we'd love to hear from you: fundraising@stepbystep.org.uk\n\n#TakeAStand #BigGive"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/P02-feed.png"
+     ]
+    }
+   },
+   {
+    "id": "S05",
+    "date": "2026-11-21",
+    "kind": "story",
+    "format": "static",
+    "title": "Checking it twice",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {},
+    "sticker": "Link sticker: stepbystep.org.uk/big-give ('Promise a gift')",
+    "videoNote": null,
+    "media": {
+     "story": [
+      "media/christmas-2026/S05-story.png"
+     ]
+    }
+   },
+   {
+    "id": "P03",
+    "date": "2026-11-22",
+    "kind": "reel",
+    "format": "video",
+    "title": "Christmas film premiere",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "Our Christmas film is here.\n\nFor most of us, Christmas means a table set for everyone and someone glad we're there. For young people facing homelessness, it can look very different.\n\nFrom midday on 1 December, every gift to Step by Step is doubled for one week. Make a donation promise: link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "Our Christmas film is here. Watch, and share it with someone who'd want to see it.\n\nFor most of us, Christmas means a table set for everyone and someone glad we're there. For young people facing homelessness, it can look very different.\n\nTake a stand this Christmas: stepbystep.org.uk/christmas"
+    },
+    "sticker": null,
+    "videoNote": "The finished video is still being edited. This is the cover.",
+    "media": {
+     "story": [
+      "media/christmas-2026/P03-story.png"
+     ]
+    }
+   },
+   {
+    "id": "S02",
+    "date": "2026-11-23",
+    "kind": "story",
+    "format": "static",
+    "title": "£33 becomes £66",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": true,
+    "captions": {},
+    "sticker": "Link sticker: stepbystep.org.uk/big-give ('Promise a gift')",
+    "videoNote": null,
+    "media": {
+     "story": [
+      "media/christmas-2026/S02-story.mp4"
+     ]
+    }
+   },
+   {
+    "id": "P04",
+    "date": "2026-11-24",
+    "kind": "feed",
+    "format": "static",
+    "title": "Get your team behind it",
+    "platforms": [
+     "fb",
+     "li",
+     "ig"
+    ],
+    "animated": false,
+    "captions": {
+     "fb": "Lodges, churches, clubs, schools and offices have always stood with Step by Step. This Christmas, your group can go twice as far.\n\nFrom midday on 1 December to midday on 8 December, every gift through our Big Give page is doubled. Hold a collection, a bake sale or a Christmas jumper day, then give it together while it's doubled.\n\nGiving £500 or more as a group? A bank transfer is easiest. Set up a free Big Give donor account and transfer before 1 December, as it can take five working days.\n\nTell us you're taking part and we'll thank you here: fundraising@stepbystep.org.uk",
+     "ig": "Get your team in on it. Office, book club, five-a-side, group chat.\n\nFrom midday on 1 December, every gift to Step by Step through Big Give is doubled for one week. Give together and tag us so we can say thank you.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "li": "Looking for a Christmas giving moment for your team?\n\nFrom midday on 1 December to midday on 8 December, every gift to Step by Step through the Big Give Christmas Challenge is doubled. A team collection, a Christmas jumper day or your company's own matched giving could go twice as far for young people facing homelessness in the South of England.\n\nFor £500 or more, set up a free Big Give donor account and transfer before 1 December.\n\nGet in touch and we'll help you plan it: fundraising@stepbystep.org.uk\n\n#TakeAStand #BigGive #CorporateGiving #TeamGiving"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/P04-feed.png"
+     ]
+    }
+   },
+   {
+    "id": "S03",
+    "date": "2026-11-25",
+    "kind": "story",
+    "format": "static",
+    "title": "Countdown: 6 days",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {},
+    "sticker": "Same countdown sticker as 20 Nov, so people who tapped it before aren't asked again",
+    "videoNote": null,
+    "media": {
+     "story": [
+      "media/christmas-2026/S03-story.png"
+     ]
+    }
+   },
+   {
+    "id": "P07",
+    "date": "2026-11-26",
+    "kind": "feed",
+    "format": "static",
+    "title": "Seeing double?",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": true,
+    "captions": {
+     "ig": "Seeing double? 🎅🎅\n\nFrom midday on Tuesday 1 December, every gift to Step by Step through Big Give is doubled for one week. Same Santa, twice the presents.\n\nMake a donation promise and we'll remind you when it opens. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "Seeing double? 🎅🎅 You will be from 1 December.\n\nFor one week, every gift to Step by Step through Big Give is doubled: £25 becomes £50 for a young person facing homelessness. Same Santa, twice the presents.\n\nMake a donation promise and we'll remind you when it opens: stepbystep.org.uk/big-give"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/P07-feed.mp4"
+     ]
+    }
+   },
+   {
+    "id": "S04",
+    "date": "2026-11-27",
+    "kind": "story",
+    "format": "static",
+    "title": "Bring your people",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": true,
+    "captions": {},
+    "sticker": "Link sticker: stepbystep.org.uk/big-give",
+    "videoNote": null,
+    "media": {
+     "story": [
+      "media/christmas-2026/S04-story.mp4"
+     ]
+    }
+   },
+   {
+    "id": "S06",
+    "date": "2026-11-28",
+    "kind": "story",
+    "format": "static",
+    "title": "Two turtle doves",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {},
+    "sticker": "Poll sticker: 'Doubled gifts or two turtle doves?' Then the link sticker: stepbystep.org.uk/big-give",
+    "videoNote": null,
+    "media": {
+     "story": [
+      "media/christmas-2026/S06-story.png"
+     ]
+    }
+   },
+   {
+    "id": "P06",
+    "date": "2026-11-30",
+    "kind": "feed",
+    "format": "static",
+    "title": "Tomorrow, noon: Jess's story",
+    "platforms": [
+     "ig",
+     "fb",
+     "li"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "Tomorrow at midday, two things happen.\n\nJess tells her story, in her own words. And Big Give opens: for one week, every gift to Step by Step is doubled. £25 becomes £50 for a young person facing homelessness, at no extra cost to you.\n\nSet your alarm, and keep an eye on our stories. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "Tomorrow at midday, Jess tells her story in her own words. And for one week from then, every gift to Step by Step through Big Give is doubled: £25 becomes £50, and £100 becomes £200.\n\nOur Big Give page goes live at 12pm: donate.biggive.org/campaign/a05WS00000FUCJFYA5\n\nGive early in the week for the best chance of your gift being doubled.",
+     "li": "Tomorrow at midday, Step by Step's Big Give Christmas Challenge opens, and Jess shares her story in her own words. For one week, every gift is doubled.\n\nThank you to everyone who has pledged, shared and planned ahead. If your team is taking part, tag us and we'll say thank you.\n\ndonate.biggive.org/campaign/a05WS00000FUCJFYA5\n\n#TakeAStand #BigGive"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/P06-feed.png"
+     ],
+     "story": [
+      "media/christmas-2026/P06-story.png"
+     ]
+    }
+   },
+   {
+    "id": "P05",
+    "date": "2026-12-02",
+    "kind": "reel",
+    "format": "video",
+    "title": "Anda podcast clip (date TBC)",
+    "platforms": [
+     "ig",
+     "fb",
+     "li"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "[[the line from the clip, in Anda's words]]\n\nAnda [[surname]], [[role]] at Step by Step, on [[podcast name]]. Full episode: [[link]]\n\nFrom midday on 1 December, every gift to Step by Step is doubled for one week. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "[[the line from the clip, in Anda's words]]\n\nAnda [[surname]], [[role]] at Step by Step, talking on [[podcast name]]. Listen to the full episode: [[link]]",
+     "li": "[[the line from the clip, in Anda's words]]\n\nOur [[role]], Anda [[surname]], joined [[podcast name]] to talk about [[topic]]. Full episode: [[link]]\n\n#TakeAStand #YouthHomelessness"
+    },
+    "sticker": null,
+    "videoNote": "The finished video is still being edited. This is the cover.",
+    "media": {
+     "story": [
+      "media/christmas-2026/P05-story.png"
+     ]
+    }
+   },
+   {
+    "id": "S07",
+    "date": "2026-12-03",
+    "kind": "story",
+    "format": "static",
+    "title": "Why have one present?",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {},
+    "sticker": "Link sticker: our Big Give page (donate.biggive.org/campaign/a05WS00000FUCJFYA5)",
+    "videoNote": null,
+    "media": {
+     "story": [
+      "media/christmas-2026/S07-story.png"
+     ]
+    }
+   }
+  ]
+ }
+]
