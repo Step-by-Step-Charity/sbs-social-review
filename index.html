@@ -84,6 +84,8 @@ header h1{font:400 28px/1 var(--head);letter-spacing:.03em;margin:0}
 .c .who{font-weight:bold}.c .tm{color:var(--muted);font-size:12px}
 .c .txt{white-space:pre-wrap;margin-top:2px}
 .empty{font-size:13px;color:var(--muted)}
+.out{margin-top:6px;font-size:13px;border-radius:8px;padding:6px 10px;white-space:pre-wrap}
+.out-ok{background:#eaf5d4;color:#2d4400}.out-no{background:#fde3ef;color:#7a0a47}.out-wait{color:var(--muted);padding:2px 0;font-style:italic}
 /* bulk bar */
 #bulk{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);background:var(--purple);color:#fff;border-radius:999px;padding:10px 12px 10px 20px;display:none;align-items:center;gap:14px;box-shadow:0 6px 24px rgba(40,20,80,.35);z-index:20;max-width:calc(100% - 32px)}
 #bulk.on{display:flex}
@@ -212,7 +214,11 @@ function state(camp, id) {
   const t = thread(camp, id).filter(c => c.decision === "Approved" || c.decision === "Changes needed");
   if (!t.length) return { k: "wait", label: "Waiting for sign-off" };
   const last = t[t.length - 1];
-  return last.decision === "Approved" ? { k: "ok", label: `Approved by ${last.name}` } : { k: "change", label: `Changes needed (${last.name})` };
+  if (last.decision === "Approved") return { k: "ok", label: `Approved by ${last.name}` };
+  // Once every "changes needed" since the last approval has been dealt with, it's back with the reviewer.
+  const open = t.filter(c => c.decision === "Changes needed" && !c.outcome);
+  if (!open.length) return { k: "wait", label: "Changes made: please check again" };
+  return { k: "change", label: `Changes needed (${last.name})` };
 }
 
 /* ---------- render ---------- */
@@ -262,7 +268,10 @@ function postHTML(camp, p) {
       <div class="thread"><h5>Comments and sign-offs</h5>
         ${th.length ? th.map(c => `<div class="c"><span class="who">${esc(c.name)}</span>${c.team ? `, ${esc(c.team)}` : ""} · <span class="badge ${c.decision === "Approved" ? "b-ok" : c.decision === "Changes needed" ? "b-change" : "b-wait"}">${esc(c.decision || "Comment")}</span>
           <span class="tm">${new Date(c.date).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}${c.bulk ? " · approved with others" : ""}</span>
-          ${c.comment ? `<div class="txt">${esc(c.comment)}</div>` : ""}</div>`).join("") : `<div class="empty">Nothing yet.</div>`}
+          ${c.comment ? `<div class="txt">${esc(c.comment)}</div>` : ""}
+          ${c.outcome === "Done" ? `<div class="out out-ok"><b>✓ Done</b>${c.reply ? ` · ${esc(c.reply)}` : ""}</div>`
+            : c.outcome === "Not changing" ? `<div class="out out-no"><b>✗ Not changing</b>${c.reply ? ` · ${esc(c.reply)}` : ""}</div>`
+            : c.comment && c.decision !== "Approved" ? `<div class="out out-wait">Not dealt with yet</div>` : ""}</div>`).join("") : `<div class="empty">Nothing yet.</div>`}
       </div>
     </div></article>`;
 }
