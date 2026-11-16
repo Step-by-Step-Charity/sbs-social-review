@@ -180,7 +180,9 @@ const KIND = { feed: "Feed post", story: "Story", reel: "Reel" };
 // "Instagram story", "Facebook reel", "LinkedIn post"… so nobody has to guess where a post goes.
 const where = (pl, kind) => `${PL[pl]} ${pl === "li" ? (kind === "feed" ? "post" : "video") : kind === "feed" ? "feed" : kind}`;
 const D = s => new Date(s + "T12:00:00");
-const fmt = (s, o) => D(s).toLocaleDateString("en-GB", o || { weekday: "short", day: "numeric", month: "short" });
+// Dates as "Tuesday 1st December" (Nic, 16 Nov).
+const ord = n => n + (n % 100 >= 11 && n % 100 <= 13 ? "th" : { 1: "st", 2: "nd", 3: "rd" }[n % 10] || "th");
+const fmt = (s, o) => D(s).toLocaleDateString("en-GB", o || { weekday: "short", day: "numeric", month: "short" }).replace(/\b(\d{1,2})(?= [A-Z])/, m => ord(+m));
 const store = { get: k => { try { return sessionStorage.getItem(k); } catch { return null; } }, set: (k, v) => { try { sessionStorage.setItem(k, v); } catch {} } };
 
 /* ---------- light password gate ---------- */
@@ -236,7 +238,7 @@ function viewer(camp, p) {
   if (!sizes.length) return `<div class="viewer"><div class="frame" style="aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;padding:20px;text-align:center">Artwork to come</div></div>`;
   const size = sizes[0];
   return `<div class="viewer" data-id="${p.id}" data-size="${size}" data-i="0">${frame(p, size, 0)}
-    ${sizes.length > 1 ? `<div class="sizes">${sizes.map(s => `<button type="button" data-size="${s}" aria-pressed="${s === size}">${s === "feed" ? "Feed" : "Story"}</button>`).join("")}</div>` : ""}</div>`;
+    ${sizes.length > 1 ? `<div class="sizes">${sizes.map(s => `<button type="button" data-size="${s}" aria-pressed="${s === size}">${{ feed: p.media.land ? "4:5 · Instagram" : "Feed", land: "Landscape · Facebook, LinkedIn", story: "Story" }[s] || s}</button>`).join("")}</div>` : ""}</div>`;
 }
 function frame(p, size, i) {
   const list = p.media[size], src = list[i];
