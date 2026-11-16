@@ -279,6 +279,7 @@ function postHTML(camp, p) {
           ${c.comment ? `<div class="txt">${esc(c.comment)}</div>` : ""}
           ${c.outcome === "Done" ? `<div class="out out-ok"><b>✓ Done</b>${c.reply ? ` · ${esc(c.reply)}` : ""}</div>`
             : c.outcome === "Not changing" ? `<div class="out out-no"><b>✗ Not changing</b>${c.reply ? ` · ${esc(c.reply)}` : ""}</div>`
+            : c.reply ? `<div class="out out-wait"><b>In hand</b> · ${esc(c.reply)}</div>`
             : c.comment && c.decision !== "Approved" ? `<div class="out out-wait">Not dealt with yet</div>` : ""}</div>`).join("") : `<div class="empty">Nothing yet.</div>`}
       </div>
     </div></article>`;
