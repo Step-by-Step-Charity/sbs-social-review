@@ -58,8 +58,8 @@ header h1{font:400 28px/1 var(--head);letter-spacing:.03em;margin:0}
 .viewer .nav{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:0;background:rgba(255,255,255,.9);font-size:16px}
 .viewer .nav.l{left:8px}.viewer .nav.r{right:8px}
 .viewer .count{position:absolute;top:8px;right:10px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:2px 8px;border-radius:999px}
-.sizes{display:flex;gap:6px;justify-content:center;margin-top:8px}
-.sizes button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:3px 10px;font-size:12px}
+.sizes{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:10px}
+.sizes button{border:2px solid var(--purple);background:#fff;color:var(--purple);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:bold;cursor:pointer}
 .sizes button[aria-pressed=true]{background:var(--purple);color:#fff;border-color:var(--purple)}
 .meta .top{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
 .meta .ref{font-weight:bold;color:var(--muted);font-size:13px}
@@ -239,8 +239,8 @@ function viewer(camp, p) {
   const sizes = Object.keys(p.media).filter(k => p.media[k].length);
   if (!sizes.length) return `<div class="viewer"><div class="frame" style="aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;padding:20px;text-align:center">Artwork to come</div></div>`;
   const size = sizes[0];
-  return `<div class="viewer" data-id="${p.id}" data-size="${size}" data-i="0">${frame(p, size, 0)}
-    ${sizes.length > 1 ? `<div class="sizes">${sizes.map(s => `<button type="button" data-size="${s}" aria-pressed="${s === size}">${{ feed: p.media.land ? "4:5 · Instagram" : "Feed", land: "Landscape · Facebook, LinkedIn", story: "Story" }[s] || s}</button>`).join("")}</div>` : ""}</div>`;
+  const btns = sizes.length > 1 ? `<div class="sizes">${sizes.map(s => `<button type="button" data-size="${s}" aria-pressed="${s === size}">${{ feed: p.media.land ? "4:5 · Instagram" : "Feed", land: "Landscape · Facebook, LinkedIn", story: "Story" }[s] || s}</button>`).join("")}</div>` : "";
+  return `<div class="viewer" data-id="${p.id}" data-size="${size}" data-i="0">${btns}${frame(p, size, 0)}</div>`;
 }
 function frame(p, size, i) {
   const list = p.media[size], src = list[i];

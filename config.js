@@ -8,6 +8,6 @@ window.REVIEW = {
   passwordHash: "ed9e5d06c737d9d770a2143cc66a30dc96b4ef8fa4fb1af0570ec2a177db69dc",
   // Each campaign's own page (<site>/<campaign>/) has its own password, so reviewers only see what they're sent.
   passwords: {
-    "christmas-2026": "f02505839a52f335ee75fbf1450c63cf96b8b4bc84489e62a5bceb40de551ae5"
+    "christmas-2026": "ed9e5d06c737d9d770a2143cc66a30dc96b4ef8fa4fb1af0570ec2a177db69dc"
   }
 };
