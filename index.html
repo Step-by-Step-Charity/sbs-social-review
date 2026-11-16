@@ -46,6 +46,10 @@ header h1{font:400 28px/1 var(--head);letter-spacing:.03em;margin:0}
 /* post */
 .post{background:var(--card);border-radius:16px;padding:16px;margin-bottom:16px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;border:2px solid transparent}
 .post.sel{border-color:var(--purple)}
+/* A tint and a coloured edge per status, so the page can be scanned at a glance. */
+.post[data-state="ok"]{background:#f0f8e2;box-shadow:inset 6px 0 0 var(--green)}
+.post[data-state="change"]{background:#fdf0f6;box-shadow:inset 6px 0 0 var(--pink)}
+.post[data-state="recheck"]{background:#fffbdc;box-shadow:inset 6px 0 0 #d8cf00}
 @media (max-width:760px){.post{grid-template-columns:1fr}}
 .viewer{position:relative;width:300px;max-width:100%;margin:0 auto}
 .viewer .frame{border-radius:14px;overflow:hidden;background:#111;position:relative}
@@ -254,7 +258,7 @@ function postHTML(camp, p) {
     ${viewer(camp, p)}
     <div class="meta">
       <div class="top"><span class="ref">${p.id}</span><span class="badge b-${st.k}">${esc(st.label)}</span>
-        <label class="pick"><input type="checkbox" data-pick="${p.id}" ${selected.has(p.id) ? "checked" : ""}> Select</label></div>
+        ${st.k === "ok" ? "" : `<label class="pick"><input type="checkbox" data-pick="${p.id}" ${selected.has(p.id) ? "checked" : ""}> Select</label>`}</div>
       <h4>${esc(p.title)}</h4>
       <div class="when">${fmt(p.date, { weekday: "long", day: "numeric", month: "long" })}${p.animated ? " · animated" : ""}</div>
       <div class="where">${p.platforms.map(x => `<span class="pl pl-${x}">${where(x, p.kind)}</span>`).join("")}</div>
