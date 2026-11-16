@@ -102,27 +102,25 @@
     }
    },
    {
-    "id": "P02",
+    "id": "P08",
     "date": "2026-11-20",
     "kind": "feed",
     "format": "static",
-    "title": "Can we get to [[number]]?",
+    "title": "Save the date: 1 December, noon",
     "platforms": [
      "ig",
-     "fb",
-     "li"
+     "fb"
     ],
     "animated": false,
     "captions": {
-     "ig": "Here's our challenge: can we get [[number]] people giving to Step by Step in Big Give week?\n\nThanks to our pledgers, every gift from midday on 1 December is doubled for one week, while the match funds last. Every single one gets us closer.\n\nMake a donation promise now and we'll remind you when it opens. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
-     "fb": "Here's our challenge: can we get [[number]] people giving to Step by Step in Big Give week?\n\nThanks to our pledgers, every gift from midday on 1 December is doubled for one week while the match funds last, so every one of you counts twice.\n\nMake a donation promise and we'll remind you when it opens: stepbystep.org.uk/big-give",
-     "li": "Our Big Give challenge: can we get [[number]] people giving to Step by Step between 1 and 8 December?\n\nThanks to the businesses and individuals who pledged to the match fund, every gift that week is doubled for young people facing homelessness. If your team would like to be part of it, we'd love to hear from you: fundraising@stepbystep.org.uk\n\n#TakeAStand #BigGive"
+     "ig": "Save the date: midday on Tuesday 1 December.\n\nFor one week, every gift to Step by Step through Big Give is doubled, while the match funds last. £33 gives a young person facing homelessness a safe night. That week, it gives them two.\n\nPromise your gift now and we'll remind you when it opens. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "Save the date: midday on Tuesday 1 December.\n\nFrom then until midday on Tuesday 8 December, every gift to Step by Step through Big Give is doubled, while the match funds last. £33 gives a young person facing homelessness a safe night. That week, it gives them two.\n\nPromise your gift now and we'll send you a reminder the moment it opens: stepbystep.org.uk/big-give"
     },
     "sticker": null,
     "videoNote": null,
     "media": {
      "feed": [
-      "media/christmas-2026/P02-feed.png"
+      "media/christmas-2026/P08-feed.png"
      ]
     }
    },
@@ -202,15 +200,40 @@
     ],
     "animated": false,
     "captions": {
-     "fb": "Lodges, churches, clubs, schools and offices have always stood with Step by Step. This Christmas, your group can go twice as far.\n\nFrom midday on 1 December to midday on 8 December, every gift through our Big Give page is doubled, while the match funds last. Hold a collection, a bake sale or a Christmas jumper day, then give it together while it's doubled.\n\nGiving £500 or more as a group? A bank transfer is easiest. Set up a free Big Give donor account and transfer before 1 December, as it can take five working days.\n\nTell us you're taking part and we'll thank you here: fundraising@stepbystep.org.uk",
-     "ig": "Get your team in on it. Office, book club, five-a-side, group chat.\n\nFrom midday on 1 December, every gift to Step by Step through Big Give is doubled for one week, while the match funds last. Give together and tag us so we can say thank you.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
-     "li": "Looking for a Christmas giving moment for your team?\n\nFrom midday on 1 December to midday on 8 December, every gift to Step by Step through the Big Give Christmas Challenge is doubled, while the match funds last. A team collection, a Christmas jumper day or your company's own matched giving could go twice as far for young people facing homelessness in the South of England.\n\nFor £500 or more, set up a free Big Give donor account and transfer before 1 December.\n\nGet in touch and we'll help you plan it: fundraising@stepbystep.org.uk\n\n#TakeAStand #BigGive #CorporateGiving #TeamGiving"
+     "fb": "Lodges, churches, clubs, schools and offices have always stood with Step by Step. This Christmas, your group can go twice as far.\n\nFrom midday on 1 December to midday on 8 December, every gift through our Big Give page is doubled, while the match funds last. Hold a collection, a bake sale or a Christmas jumper day, then give it together while it's doubled.\n\nPromise your group's gift now and we'll remind you when it opens: stepbystep.org.uk/big-give\n\nGiving £500 or more as a group? A bank transfer is easiest. Set up a free Big Give donor account and transfer before 1 December, as it can take five working days.\n\nTell us you're taking part and we'll thank you here: fundraising@stepbystep.org.uk",
+     "ig": "Get your team in on it. Office, book club, five-a-side, group chat.\n\nFrom midday on 1 December, every gift to Step by Step through Big Give is doubled for one week, while the match funds last. Give together and tag us so we can say thank you.\n\nPromise your gift now: link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "li": "Looking for a Christmas giving moment for your team?\n\nFrom midday on 1 December to midday on 8 December, every gift to Step by Step through the Big Give Christmas Challenge is doubled, while the match funds last. A team collection, a Christmas jumper day or your company's own matched giving could go twice as far for young people facing homelessness in the South of England.\n\nFor £500 or more, set up a free Big Give donor account and transfer before 1 December.\n\nPromise your team's gift now and we'll remind you when it opens: stepbystep.org.uk/big-give\n\nGet in touch and we'll help you plan it: fundraising@stepbystep.org.uk\n\n#TakeAStand #BigGive #CorporateGiving #TeamGiving"
     },
     "sticker": null,
     "videoNote": null,
     "media": {
      "feed": [
       "media/christmas-2026/P04-feed.png"
+     ]
+    }
+   },
+   {
+    "id": "P02",
+    "date": "2026-11-25",
+    "kind": "feed",
+    "format": "static",
+    "title": "Can we get to [[number]]?",
+    "platforms": [
+     "ig",
+     "fb",
+     "li"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "Here's our challenge: can we get [[number]] people giving to Step by Step in Big Give week?\n\nThanks to our pledgers, every gift from midday on 1 December is doubled for one week, while the match funds last. Every single one gets us closer.\n\nMake a donation promise now and we'll remind you when it opens. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "Here's our challenge: can we get [[number]] people giving to Step by Step in Big Give week?\n\nThanks to our pledgers, every gift from midday on 1 December is doubled for one week while the match funds last, so every one of you counts twice.\n\nMake a donation promise and we'll remind you when it opens: stepbystep.org.uk/big-give",
+     "li": "Our Big Give challenge: can we get [[number]] people giving to Step by Step between 1 and 8 December?\n\nThanks to the businesses and individuals who pledged to the match fund, every gift that week is doubled for young people facing homelessness. If your team would like to be part of it, we'd love to hear from you: fundraising@stepbystep.org.uk\n\n#TakeAStand #BigGive"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/P02-feed.png"
      ]
     }
    },
@@ -398,14 +421,12 @@
     "title": "£33 → £66 this week",
     "platforms": [
      "ig",
-     "fb",
-     "li"
+     "fb"
     ],
     "animated": true,
     "captions": {
      "ig": "Do the maths with us: give £33 this week and a young person facing homelessness gets £66 of support.\n\nEvery gift to Step by Step through Big Give is doubled until midday on Tuesday 8 December, while the match funds last. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
-     "fb": "£33 gives a young person facing homelessness a safe night and someone checking in on them. This week, it gives them two.\n\nEvery gift through our Big Give page is doubled until midday on Tuesday 8 December, while the match funds last: donate.biggive.org/campaign/a05WS00000FUCJFYA5",
-     "li": "£33 in, £66 for a young person facing homelessness. Until midday on Tuesday 8 December, every gift to Step by Step through the Big Give Christmas Challenge is doubled, while the match funds last.\n\ndonate.biggive.org/campaign/a05WS00000FUCJFYA5\n\n#TakeAStand #BigGive"
+     "fb": "£33 gives a young person facing homelessness a safe night and someone checking in on them. This week, it gives them two.\n\nEvery gift through our Big Give page is doubled until midday on Tuesday 8 December, while the match funds last: donate.biggive.org/campaign/a05WS00000FUCJFYA5"
     },
     "sticker": null,
     "videoNote": null,
@@ -456,6 +477,29 @@
     }
    },
    {
+    "id": "B07",
+    "date": "2026-12-03",
+    "kind": "feed",
+    "format": "static",
+    "title": "The match won't last",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "Match funding is limited, and once it's gone, it's gone.\n\nIf you've been meaning to give, now's the time: every gift to Step by Step through Big Give is doubled until midday on Tuesday 8 December, while the match funds last. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "The match funding for Step by Step won't last all week. If you've been meaning to give, now's the time to double it.\n\nEvery gift through our Big Give page is doubled until midday on Tuesday 8 December, while the match funds last: donate.biggive.org/campaign/a05WS00000FUCJFYA5"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/B07-feed.png"
+     ]
+    }
+   },
+   {
     "id": "B04",
     "date": "2026-12-04",
     "kind": "reel",
@@ -501,6 +545,52 @@
     }
    },
    {
+    "id": "B08",
+    "date": "2026-12-05",
+    "kind": "feed",
+    "format": "static",
+    "title": "Halfway: [[£X]] raised",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {
+     "ig": "Thank you. We've raised [[£X]] so far for young people facing homelessness, and every gift is still doubled until midday on Tuesday 8 December, while the match funds last.\n\nHelp us close the gap: link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "Thank you to everyone who's given so far. We're at [[£X]], with [[£X]] to go, and every gift through our Big Give page is still doubled until midday on Tuesday 8 December, while the match funds last.\n\ndonate.biggive.org/campaign/a05WS00000FUCJFYA5"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/B08-feed.png"
+     ]
+    }
+   },
+   {
+    "id": "B09",
+    "date": "2026-12-06",
+    "kind": "feed",
+    "format": "static",
+    "title": "Seeing double?",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": true,
+    "captions": {
+     "ig": "Seeing double? So is every gift to Step by Step this week 👀\n\nUntil midday on Tuesday 8 December, everything you give through Big Give is doubled, while the match funds last. £33 becomes £66 for a young person facing homelessness. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
+     "fb": "Seeing double? So is every gift this week.\n\nUntil midday on Tuesday 8 December, every gift to Step by Step through Big Give is doubled, while the match funds last. £33 becomes £66 for a young person facing homelessness: donate.biggive.org/campaign/a05WS00000FUCJFYA5"
+    },
+    "sticker": null,
+    "videoNote": null,
+    "media": {
+     "feed": [
+      "media/christmas-2026/B09-feed.mp4"
+     ]
+    }
+   },
+   {
     "id": "B05",
     "date": "2026-12-07",
     "kind": "feed",
@@ -541,7 +631,7 @@
     "animated": false,
     "captions": {
      "ig": "\"If you're thinking about donating, just do it, even if it's tiny. Because it all adds up.\"\n\nFinal hours: every gift to Step by Step is doubled until 12pm today, while the match funds last. Link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
-     "fb": "\"What may look like a five pound note to you could go towards something much more impactful.\"\n\nFinal hours. Every gift to Step by Step through Big Give is doubled until 12pm today: donate, while the match funds last.biggive.org/campaign/a05WS00000FUCJFYA5"
+     "fb": "\"What may look like a five pound note to you could go towards something much more impactful.\"\n\nFinal hours. Every gift to Step by Step through Big Give is doubled until 12pm today, while the match funds last: donate.biggive.org/campaign/a05WS00000FUCJFYA5"
     },
     "sticker": null,
     "videoNote": "Draft cut: the final edit may change slightly.",
@@ -607,14 +697,12 @@
     "title": "Christmas used to be a performance",
     "platforms": [
      "ig",
-     "fb",
-     "li"
+     "fb"
     ],
     "animated": false,
     "captions": {
      "ig": "\"Christmas is such a big show.\"\n\nFor Jess, Christmas used to mean keeping the peace. Now? \"There's no performing.\"\n\nHelp another young person find a Christmas where they can just be themselves. Take a stand: link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
-     "fb": "\"You knew what you needed to do to keep the peace.\"\n\nJess remembers Christmases that felt like a performance. With a host family through Step by Step, she found one where she could just enjoy it.\n\nTake a stand this Christmas: stepbystep.org.uk/christmas",
-     "li": "\"Christmas is such a big show.\" For many young people, Christmas at home isn't safe or easy. Jess tells us what changed when she found a host family through Step by Step.\n\nstepbystep.org.uk/christmas\n\n#TakeAStand #YouthHomelessness"
+     "fb": "\"You knew what you needed to do to keep the peace.\"\n\nJess remembers Christmases that felt like a performance. With a host family through Step by Step, she found one where she could just enjoy it.\n\nTake a stand this Christmas: stepbystep.org.uk/christmas"
     },
     "sticker": null,
     "videoNote": "Draft cut: the final edit may change slightly.",
@@ -744,14 +832,12 @@
     "title": "Let's make it happen",
     "platforms": [
      "ig",
-     "fb",
-     "li"
+     "fb"
     ],
     "animated": false,
     "captions": {
      "ig": "\"Little me wanted to be a teacher, but probably would have never pursued it because I didn't have anyone believing in me.\"\n\nJess is now training to teach primary school. Someone believing in you changes everything. Take a stand this Christmas: link in bio.\n\n#TakeAStand #BigGive #ChristmasChallenge #YouthHomelessness",
-     "fb": "\"Little me wanted to be a teacher, but probably would have never pursued it because I didn't have anyone believing in me.\"\n\nToday Jess studies primary teaching, and she really, really loves it. That's what someone in your corner can do.\n\nTake a stand this Christmas: stepbystep.org.uk/christmas",
-     "li": "\"The path of my life has completely changed.\"\n\nJess was 16 when she came to Step by Step. Today she's training to be a primary school teacher. Youth homelessness is preventable, and young people are capable of extraordinary things when someone believes in them.\n\nstepbystep.org.uk/christmas\n\n#TakeAStand #YouthHomelessness"
+     "fb": "\"Little me wanted to be a teacher, but probably would have never pursued it because I didn't have anyone believing in me.\"\n\nToday Jess studies primary teaching, and she really, really loves it. That's what someone in your corner can do.\n\nTake a stand this Christmas: stepbystep.org.uk/christmas"
     },
     "sticker": null,
     "videoNote": "Draft cut: the final edit may change slightly.",
