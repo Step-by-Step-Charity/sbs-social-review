@@ -457,26 +457,6 @@
     }
    },
    {
-    "id": "S08",
-    "date": "2026-12-02",
-    "kind": "story",
-    "format": "static",
-    "title": "Progress (daily template)",
-    "platforms": [
-     "ig",
-     "fb"
-    ],
-    "animated": false,
-    "captions": {},
-    "sticker": "Link sticker: our Big Give page",
-    "videoNote": null,
-    "media": {
-     "story": [
-      "media/christmas-2026/S08-story.png"
-     ]
-    }
-   },
-   {
     "id": "B03",
     "date": "2026-12-02",
     "kind": "feed",
@@ -516,6 +496,26 @@
     "media": {
      "story": [
       "media/christmas-2026/S07-story.png"
+     ]
+    }
+   },
+   {
+    "id": "S08",
+    "date": "2026-12-03",
+    "kind": "story",
+    "format": "static",
+    "title": "Progress (daily template)",
+    "platforms": [
+     "ig",
+     "fb"
+    ],
+    "animated": false,
+    "captions": {},
+    "sticker": "Link sticker: our Big Give page",
+    "videoNote": null,
+    "media": {
+     "story": [
+      "media/christmas-2026/S08-story.png"
      ]
     }
    },
